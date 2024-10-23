@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/Pokemons">
+    <file alias="qmldir">/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Debug/Pokemons/qmldir</file>
+  </qresource>
+</RCC>
+

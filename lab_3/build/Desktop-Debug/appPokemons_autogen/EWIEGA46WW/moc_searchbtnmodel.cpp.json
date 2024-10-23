@@ -1,0 +1,37 @@
+{
+    "classes": [
+        {
+            "className": "SearchBtnModel",
+            "object": true,
+            "qualifiedClassName": "SearchBtnModel",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "update",
+                    "returnType": "void"
+                }
+            ],
+            "slots": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "arg",
+                            "type": "QString"
+                        }
+                    ],
+                    "name": "onSearchBtnPressed",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "searchbtnmodel.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,30 @@
+{
+    "classes": [
+        {
+            "classInfos": [
+                {
+                    "name": "QML.Element",
+                    "value": "auto"
+                }
+            ],
+            "className": "ImageModel",
+            "object": true,
+            "qualifiedClassName": "ImageModel",
+            "signals": [
+                {
+                    "access": "public",
+                    "name": "imageUpdated",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "imagemodel.h",
+    "outputRevision": 68
+}

@@ -1,0 +1,169 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Release-edc7939d00807068beb5.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"name" : "Release",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "Pokemons",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Release-286c2f02d0c7ce4db40a.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Release-688a3a644797bad50061.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Release-83cfd8fdb313dfa8e3a7.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons-Release-83efbec26729b96d1621.json",
+					"name" : "appPokemons",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_autogen-Release-37ba214f6c160ad97884.json",
+					"name" : "appPokemons_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_autogen_timestamp_deps-Release-dc3038e94d35e2660ece.json",
+					"name" : "appPokemons_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_automoc_json_extraction::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_automoc_json_extraction-Release-27910e0de9f708b097e6.json",
+					"name" : "appPokemons_automoc_json_extraction",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_other_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_other_files-Release-f3c78cffa79d01a306fc.json",
+					"name" : "appPokemons_other_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_qmlimportscan-Release-b9e846eafb11bb1748c0.json",
+					"name" : "appPokemons_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_qmllint-Release-e576154bc9e29b474058.json",
+					"name" : "appPokemons_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_qmllint_json-Release-9cb21b8cf872bde83146.json",
+					"name" : "appPokemons_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_qmltyperegistration-Release-15ed94e5886c21251498.json",
+					"name" : "appPokemons_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appPokemons_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appPokemons_tooling-Release-1c7b3a3f3031ba9a7d21.json",
+					"name" : "appPokemons_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release",
+		"source" : "/home/anton/Documents/Networks/course3/lab_3/Pokemons"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

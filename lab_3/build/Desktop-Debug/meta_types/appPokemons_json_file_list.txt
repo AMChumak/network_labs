@@ -1,0 +1,3 @@
+/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Debug/appPokemons_autogen/include/../EWIEGA46WW/moc_imagemodel.cpp.json
+/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Debug/appPokemons_autogen/include/../EWIEGA46WW/moc_searchbtnmodel.cpp.json
+/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Debug/appPokemons_autogen/include/../EWIEGA46WW/moc_tablemodel.cpp.json
