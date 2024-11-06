@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 #include <sys/poll.h>
+#include <sys/socket.h>
 #include <unistd.h>
 #include <arpa/inet.h>
 #include <fcntl.h>
@@ -15,6 +16,8 @@
 #define MAX_CONNECTIONS 1024
 
 typedef struct {
+    struct ares_options options;
+    char *name;
     int client_fd;
     int server_fd;
     ares_channel channel;
@@ -82,46 +85,46 @@ static void remove_from_pfds(int del_fd) {
 
 void sock_state_cb(void *data, ares_socket_t socket_fd, int readable, int writable)
 {
-  size_t idx;
 
-  /* Find match */
-  for (idx=0; idx<MAX_CONNECTIONS; idx++) {
-    if (pfds[idx].fd == socket_fd) {
-      break;
-    }
-  }
+    size_t idx;
 
-  /* Not found */
-  if (idx > MAX_CONNECTIONS) {
-    /* Do nothing */
-    if (!readable && !writable) {
-      return;
+    /* Find match */
+    for (idx=0; idx<MAX_CONNECTIONS; idx++) {
+        if (pfds[idx].fd == socket_fd) {
+        break;
+        }
     }
-    //find first free fd
-    for(idx = 0; pfds[idx].fd != -1; idx++);
-        
-    // in implementation with dynamic fds buffer we should realloc it here!
-  } else {
-    /* Remove */
-    if (!readable && !writable) {
-      remove_from_pfds(idx);
-      return;
-    }
-  }
 
-  /* Update Poll Events (including on Add) */
-  connections[idx].state = -1;
-  pfds[idx].fd = socket_fd;
-  pfds[idx].events = 0;
-  if (readable) {
-    pfds[idx].events |= POLLIN;
-  }
-  if (writable) {
-    pfds[idx].events |= POLLOUT;
-  }
+    /* Not found */
+    if (idx > MAX_CONNECTIONS) {
+        /* Do nothing */
+        if (!readable && !writable) {
+        return;
+        }
+        //find first free fd
+        for(idx = 0; pfds[idx].fd != -1; idx++);
+            
+        // in implementation with dynamic fds buffer we should realloc it here!
+    } else {
+        /* Remove */
+        if (!readable && !writable) {
+        remove_from_pfds(idx);
+        return;
+        }
+    }
+
+    /* Update Poll Events (including on Add) */
+    connections[idx].state = -1;
+    connections[idx].client_fd = (int)data; // такое соглашение, что в client_fd кладём idx чтобы потом можно было восстановить channel во время обработки в poll
+    pfds[idx].fd = socket_fd;
+    pfds[idx].events = 0;
+    if (readable) {
+        pfds[idx].events |= POLLIN;
+    }
+    if (writable) {
+        pfds[idx].events |= POLLOUT;
+    }
 }
-
-// CALLBACK FOR DNS FINISHED CASE
 
 
 
@@ -185,7 +188,58 @@ char *msg(char code, char type, int ipv4Addr, char dnsLen, const char *name, sho
     return msg;
 }
 
-void collectingMeta(int idx, int bytes_read, char *buffer, struct ares_options *options) {
+static void addrinfo_cb(void *arg, int status, int timeouts, struct ares_addrinfo *result) {
+    int idx = (int)arg;
+    int secLen = 6 + 1 + connections[idx].buffer[4];
+    int checkFlag = 0;
+    if (result) {
+        struct ares_addrinfo_node *node;
+        for (node = result->nodes; node != NULL; node = node->ai_next) {
+            if (node->ai_family == AF_INET) {
+                const struct sockaddr_in *dest_addr = (const struct sockaddr_in *)((void *)node->ai_addr);
+
+                //create socket to destination
+                int proxy_socket;
+                proxy_socket = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
+
+
+                if (connect(proxy_socket, (struct sockaddr*)dest_addr, sizeof(*dest_addr)) < 0) {
+                    if (errno != EINPROGRESS) {
+                        perror("connect");
+                        char * ans = msg(0, 1, *(uint32_t *)(connections[idx].buffer + secLen - 6),0,NULL,*(short *)(connections[idx].buffer + secLen - 2));
+                        send(pfds[idx].fd, ans, strlen(ans), 0);
+                        free(ans);
+                        close(proxy_socket);
+                    }
+                }
+
+                //Add new socket in poll and link server and client
+                int newIdx = add_to_pfds(proxy_socket, POLLIN|POLLOUT);
+                connections[idx].server_fd = newIdx;
+                pfds[idx].events |= POLLOUT;
+                connections[newIdx].client_fd = idx;
+                connections[idx].state = 2;
+                connections[newIdx].state = 2;
+
+                char * ans = msg(4, 1, *(uint32_t *)(connections[idx].buffer + secLen - 6),0,NULL,*(short *)(connections[idx].buffer + secLen - 2));
+                send(pfds[idx].fd, ans, strlen(ans), 0);
+                free(ans);
+
+
+                checkFlag = 1;
+                break;
+            } else {
+                continue;
+            }
+        }
+    }
+    if (!checkFlag) {
+        //todo send err msg
+    }
+    ares_freeaddrinfo(result);
+}
+
+void collectingMeta(int idx, int bytes_read, char *buffer, int optmask,struct ares_addrinfo_hints *hints ) {
     for (int j = 0; j < bytes_read; ++j) {
         connections[idx].buffer[connections[idx].size + j] = buffer[j];
     }
@@ -203,7 +257,6 @@ void collectingMeta(int idx, int bytes_read, char *buffer, struct ares_options *
             //todo send message        
         }
         if (connections[idx].size == secLen) {
-            printf("Ye2!\n");
             if (connections[idx].buffer[3] == 0x01) {
                 //create socket to destination
                 int proxy_socket;
@@ -238,8 +291,26 @@ void collectingMeta(int idx, int bytes_read, char *buffer, struct ares_options *
                 free(ans);
 
             } else if (connections[idx].buffer[3] == 0x03) {
-                printf("dns now doesn't work\n");
-                //Prepare dns request
+                //prepare dns request
+                /* Enable sock state callbacks, we should not use ares_fds() or ares_getsock()
+                * in modern implementations. */
+                memset(&connections[idx].options, 0, sizeof(connections[idx].options));
+                connections[idx].options.sock_state_cb = sock_state_cb;
+                connections[idx].options.sock_state_cb_data = (void*)idx;
+
+                if (ares_init_options(&(connections[idx].channel), &connections[idx].options, optmask) != ARES_SUCCESS) {
+                    printf("c-ares initialization issue\n");
+                    return;
+                }
+                int len = connections[idx].buffer[4]+1;
+                connections[idx].name = (char *)calloc(len, sizeof(char));
+                for(int k = 0; k < len-1; k++) {
+                    connections[idx].name[k] = connections[idx].buffer[5 + k];
+                }
+                ares_getaddrinfo(connections[idx].channel,connections[idx].name, NULL, hints, addrinfo_cb, (void *)idx);
+
+                connections[idx].state = 2; //todo спорное решение 
+
             }
             
             
@@ -264,6 +335,7 @@ void transfer(int idx, int bytes_read, char *buffer, int mode) { //mode = 1 - PO
             fd = connections[idx].client_fd;
         }
         if (fd) {
+            printf("\'%s\'\n",connections[fd].buffer);
             send(pfds[fd].fd, connections[fd].buffer,connections[fd].size, 0);
             connections[fd].size = 0;
         }
@@ -273,18 +345,16 @@ void transfer(int idx, int bytes_read, char *buffer, int mode) { //mode = 1 - PO
 
 
 int main() {
-    struct ares_options options;
     int optmask = 0;
+    optmask |= ARES_OPT_SOCK_STATE_CB;
     struct ares_addrinfo_hints hints;
     /* Initialize library */
     ares_library_init(ARES_LIB_INIT_ALL);
 
-    /* Enable sock state callbacks, we should not use ares_fds() or ares_getsock()
-    * in modern implementations. */
-    memset(&options, 0, sizeof(options));
-    optmask |= ARES_OPT_SOCK_STATE_CB;
-    options.sock_state_cb = sock_state_cb;
-    options.sock_state_cb_data = NULL;
+    memset(&hints, 0, sizeof(hints));
+    hints.ai_family = AF_INET;
+    hints.ai_flags = ARES_AI_CANONNAME;
+
 
     //INITIALIZE SERVER
     char buffer[BUFFER_SIZE];
@@ -361,8 +431,10 @@ int main() {
             int i = 1, comm_socket_fd = -1;
 
             for (; i < MAX_CONNECTIONS; i++) {
-                //PROCESS INCOMING CONNECTIONS
-                if (pfds[i].revents & POLLIN) {
+                //PROCESS DNS
+                if (connections[i].state == -1 && pfds[i].revents != 0) {
+                    ares_process_fd(connections[connections[i].client_fd].channel, pfds[i].fd, pfds[i].fd);
+                } else if (pfds[i].revents & POLLIN) { //PROCESS INCOMING CONNECTIONS
                     int bytes_read = recv(pfds[i].fd, buffer, BUFFER_SIZE, 0);
 
                     if (bytes_read < 0) {
@@ -391,7 +463,7 @@ int main() {
                         } else if (connections[i].state == 1) {
                             printf("go to collecting meta\n");
                             // Collecting meta
-                            collectingMeta(i, bytes_read, buffer, &options);
+                            collectingMeta(i, bytes_read, buffer, optmask, &hints);
                         } else if (connections[i].state == 2) {
                             printf("go to transfer\n");
                             // Transfer
@@ -402,7 +474,6 @@ int main() {
 
 
                 if (pfds[i].fd != -1 && pfds[i].revents & POLLOUT) {
-                    printf("Hi\n");
                     if (connections[i].state == 2) {
                         transfer(i, 0, NULL, 2);
                     }
