@@ -1,0 +1,42 @@
+file(REMOVE_RECURSE
+  ".rcc/qmlcache/appPokemons_Main_qml.cpp"
+  ".rcc/qmlcache/appPokemons_qmlcache_loader.cpp"
+  ".rcc/qrc_appPokemons_raw_qml_0.cpp"
+  ".rcc/qrc_qmake_Pokemons.cpp"
+  "CMakeFiles/appPokemons_autogen.dir/AutogenUsed.txt"
+  "CMakeFiles/appPokemons_autogen.dir/ParseCache.txt"
+  "appPokemons_autogen"
+  "CMakeFiles/appPokemons.dir/Pokemons/build/Desktop-Release/.rcc/qmlcache/appPokemons_Main_qml.cpp.o"
+  "CMakeFiles/appPokemons.dir/Pokemons/build/Desktop-Release/.rcc/qmlcache/appPokemons_Main_qml.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/Pokemons/build/Desktop-Release/.rcc/qmlcache/appPokemons_qmlcache_loader.cpp.o"
+  "CMakeFiles/appPokemons.dir/Pokemons/build/Desktop-Release/.rcc/qmlcache/appPokemons_qmlcache_loader.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/Pokemons/build/Desktop-Release/.rcc/qrc_appPokemons_raw_qml_0.cpp.o"
+  "CMakeFiles/appPokemons.dir/Pokemons/build/Desktop-Release/.rcc/qrc_appPokemons_raw_qml_0.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/Pokemons/build/Desktop-Release/.rcc/qrc_qmake_Pokemons.cpp.o"
+  "CMakeFiles/appPokemons.dir/Pokemons/build/Desktop-Release/.rcc/qrc_qmake_Pokemons.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/appPokemons_autogen/mocs_compilation.cpp.o"
+  "CMakeFiles/appPokemons.dir/appPokemons_autogen/mocs_compilation.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/apppokemons_qmltyperegistrations.cpp.o"
+  "CMakeFiles/appPokemons.dir/apppokemons_qmltyperegistrations.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/imagemodel.cpp.o"
+  "CMakeFiles/appPokemons.dir/imagemodel.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/main.cpp.o"
+  "CMakeFiles/appPokemons.dir/main.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/searchbtnmodel.cpp.o"
+  "CMakeFiles/appPokemons.dir/searchbtnmodel.cpp.o.d"
+  "CMakeFiles/appPokemons.dir/tablemodel.cpp.o"
+  "CMakeFiles/appPokemons.dir/tablemodel.cpp.o.d"
+  "Pokemons/appPokemons.qmltypes"
+  "appPokemons"
+  "appPokemons.pdb"
+  "appPokemons_autogen/mocs_compilation.cpp"
+  "appPokemons_autogen/timestamp"
+  "apppokemons_qmltyperegistrations.cpp"
+  "meta_types/qt6apppokemons_release_metatypes.json"
+  "meta_types/qt6apppokemons_release_metatypes.json.gen"
+)
+
+# Per-language clean rules from dependency scanning.
+foreach(lang CXX)
+  include(CMakeFiles/appPokemons.dir/cmake_clean_${lang}.cmake OPTIONAL)
+endforeach()

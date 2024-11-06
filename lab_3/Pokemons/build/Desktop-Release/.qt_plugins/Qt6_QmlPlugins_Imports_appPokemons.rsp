@@ -1,0 +1,14 @@
+-rootPath
+/home/anton/Documents/Networks/course3/lab_3
+-cmake-output
+-output-file
+/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/.qt_plugins/Qt6_QmlPlugins_Imports_appPokemons.cmake
+-importPath
+/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/Pokemons
+-importPath
+/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release
+-importPath
+/usr/lib/x86_64-linux-gnu/qt6/qml
+-qrcFiles
+/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/.rcc/qmake_Pokemons.qrc
+/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/.rcc/appPokemons_raw_qml_0.qrc

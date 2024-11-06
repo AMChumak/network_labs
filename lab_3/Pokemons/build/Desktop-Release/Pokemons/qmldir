@@ -1,0 +1,5 @@
+module Pokemons
+typeinfo appPokemons.qmltypes
+prefer :/Pokemons/
+Main 1.0 Main.qml
+
