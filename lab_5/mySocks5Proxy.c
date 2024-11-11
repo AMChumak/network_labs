@@ -11,19 +11,23 @@
 #include <errno.h>
 
 
-#define BUFFER_SIZE 1024
+#define BUFFER_SIZE 102400
 #define SOCKS_PORT 8085
 #define MAX_CONNECTIONS 1024
 
 typedef struct {
     struct ares_options options;
+    char *msg;
+    int progres;
     char *name;
     int client_fd;
     int server_fd;
     ares_channel channel;
     char *buffer;
     int size;
-    int state;  // 0: initial, -1: DNS lookup, 2: connected -5: error 1: ready to connection
+    int state;  // 0: initial, -1: DNS lookup, 2: connected -5: error 1: ready to connection 3:sending the msg
+    struct sockaddr_in dest_addr;
+    int rp, wp; //read position in buffer and write position in buffer
 } connection_t;
 
 
@@ -70,14 +74,24 @@ static int add_to_pfds(int new_fd, short int flags) {
 }
 
 
-static void remove_from_pfds(int del_fd) {
-  for (int i = 0; i < MAX_CONNECTIONS; i++) {
-    if (pfds[i].fd == del_fd) {
-      pfds[i].fd = -1;
-      countUsedFds--;
-      break;
+static void remove_from_pfds(int i) {
+    if (i > MAX_CONNECTIONS || i < 0 ) {
+        return;
     }
-  }
+    pfds[i].fd = -1;
+    pfds[i].events = 0;
+    if (connections[i].buffer) {
+    free(connections[i].buffer);
+    connections[i].buffer = NULL;
+    }
+    if (connections[i].msg) {
+    free(connections[i].msg);
+    connections[i].msg = NULL;
+    }
+    connections[i].client_fd = 0;
+    connections[i].server_fd = 0;
+    connections[i].state = 0;
+    countUsedFds--;
 }
 
 
@@ -115,7 +129,8 @@ void sock_state_cb(void *data, ares_socket_t socket_fd, int readable, int writab
 
     /* Update Poll Events (including on Add) */
     connections[idx].state = -1;
-    connections[idx].client_fd = (int)data; // такое соглашение, что в client_fd кладём idx чтобы потом можно было восстановить channel во время обработки в poll
+    connections[idx].client_fd = (int)data; //такое соглашение, что в client_fd кладём idx чтобы потом можно было восстановить channel во время обработки в poll
+    printf("I am in sock state callback function %d\n",idx);
     pfds[idx].fd = socket_fd;
     pfds[idx].events = 0;
     if (readable) {
@@ -132,7 +147,7 @@ void sock_state_cb(void *data, ares_socket_t socket_fd, int readable, int writab
 
 void greeting(int idx, int bytes_read, char *buffer) {
     if (connections[idx].buffer == NULL) {
-        connections[idx].buffer = (char *)calloc(1024, sizeof(char));
+        connections[idx].buffer = (char *)calloc(BUFFER_SIZE, sizeof(char));
         connections[idx].size = 0;
     }
 
@@ -142,7 +157,6 @@ void greeting(int idx, int bytes_read, char *buffer) {
     connections[idx].size += bytes_read;
     printf("buffer now is \'%hx\'\n",*((short int *)connections[idx].buffer));
     if (connections[idx].size > 2 && connections[idx].size >= 2 + connections[idx].buffer[1]) {
-        connections[idx].state = 1;
         connections[idx].size = 0;
         char msg[2] = {0x05, 0xFF};
         for (int i = 0; i < connections[idx].buffer[1]; i++) {
@@ -155,6 +169,8 @@ void greeting(int idx, int bytes_read, char *buffer) {
         printf("sended: \'%hx\'\n",*((short int *)msg));
         if (msg[1] == 0x00) {
             connections[idx].state = 1;
+            connections[idx].size = 0;
+            connections[idx].wp = 0;
         }
     }
 }
@@ -206,7 +222,7 @@ static void addrinfo_cb(void *arg, int status, int timeouts, struct ares_addrinf
                 if (connect(proxy_socket, (struct sockaddr*)dest_addr, sizeof(*dest_addr)) < 0) {
                     if (errno != EINPROGRESS) {
                         perror("connect");
-                        char * ans = msg(0, 1, *(uint32_t *)(connections[idx].buffer + secLen - 6),0,NULL,*(short *)(connections[idx].buffer + secLen - 2));
+                        char * ans = msg(4, 3, 0,connections[idx].buffer[4],connections[idx].name,*(short *)(connections[idx].buffer + secLen - 2));
                         send(pfds[idx].fd, ans, strlen(ans), 0);
                         free(ans);
                         close(proxy_socket);
@@ -215,16 +231,17 @@ static void addrinfo_cb(void *arg, int status, int timeouts, struct ares_addrinf
 
                 //Add new socket in poll and link server and client
                 int newIdx = add_to_pfds(proxy_socket, POLLIN|POLLOUT);
+                connections[newIdx].size = 0;
                 connections[idx].server_fd = newIdx;
                 pfds[idx].events |= POLLOUT;
                 connections[newIdx].client_fd = idx;
-                connections[idx].state = 2;
-                connections[newIdx].state = 2;
+                connections[idx].state = 3;
+                connections[newIdx].state = 10;
 
-                char * ans = msg(4, 1, *(uint32_t *)(connections[idx].buffer + secLen - 6),0,NULL,*(short *)(connections[idx].buffer + secLen - 2));
-                send(pfds[idx].fd, ans, strlen(ans), 0);
-                free(ans);
-
+                connections[idx].msg =  msg(0, 3, 0,connections[idx].buffer[4],connections[idx].name,*(short *)(connections[idx].buffer + secLen - 2));
+                int ch = send(pfds[idx].fd, connections[idx].msg, strlen(connections[idx].msg), 0);
+                connections[idx].progres = ch;
+                fprintf(stdout, "address resolved\n");
 
                 checkFlag = 1;
                 break;
@@ -260,40 +277,43 @@ void collectingMeta(int idx, int bytes_read, char *buffer, int optmask,struct ar
             if (connections[idx].buffer[3] == 0x01) {
                 //create socket to destination
                 int proxy_socket;
-                struct sockaddr_in dest_addr;
+                
                 proxy_socket = socket(AF_INET, SOCK_STREAM | SOCK_NONBLOCK, 0);
 
-                memset(&dest_addr, 0, sizeof(dest_addr));
-                dest_addr.sin_family = AF_INET;
-                dest_addr.sin_addr.s_addr = *(uint32_t *)(connections[idx].buffer + secLen - 6);
-                dest_addr.sin_port = ntohs(*(short *)(connections[idx].buffer + secLen - 2));
+                memset(&connections[idx].dest_addr, 0, sizeof(connections[idx].dest_addr));
+                connections[idx].dest_addr.sin_family = AF_INET;
+                connections[idx].dest_addr.sin_addr.s_addr = *(uint32_t *)(connections[idx].buffer + secLen - 6);
+                connections[idx].dest_addr.sin_port = *(short *)(connections[idx].buffer + secLen - 2);
 
-                if (connect(proxy_socket, (struct sockaddr*)&dest_addr, sizeof(dest_addr)) < 0) {
-                    if (errno != EINPROGRESS) {
-                        perror("connect");
-                        char * ans = msg(0, 1, *(uint32_t *)(connections[idx].buffer + secLen - 6),0,NULL,*(short *)(connections[idx].buffer + secLen - 2));
-                        send(pfds[idx].fd, ans, strlen(ans), 0);
-                        free(ans);
-                        close(proxy_socket);
-                    }
+                if (connect(proxy_socket, (struct sockaddr*)&connections[idx].dest_addr, sizeof(connections[idx].dest_addr)) < 0 && errno != EINPROGRESS) {
+                    perror("connect");
+                    char * ans = msg(4, 1, *(uint32_t *)(connections[idx].buffer + secLen - 6),0,NULL,*(short *)(connections[idx].buffer + secLen - 2));
+                    send(pfds[idx].fd, ans, strlen(ans), 0);
+                    free(ans);
+                    close(proxy_socket);
                 }
+                
 
                 //Add new socket in poll and link server and client
-                int newIdx = add_to_pfds(proxy_socket, POLLIN|POLLOUT);
+                int newIdx = add_to_pfds(proxy_socket, POLLIN | POLLOUT);
+                connections[newIdx].buffer = calloc(BUFFER_SIZE, sizeof(char));
+                connections[newIdx].size = 0;
                 connections[idx].server_fd = newIdx;
                 pfds[idx].events |= POLLOUT;
                 connections[newIdx].client_fd = idx;
-                connections[idx].state = 2;
-                connections[newIdx].state = 2;
-
-                char * ans = msg(4, 1, *(uint32_t *)(connections[idx].buffer + secLen - 6),0,NULL,*(short *)(connections[idx].buffer + secLen - 2));
-                send(pfds[idx].fd, ans, strlen(ans), 0);
-                free(ans);
+                connections[idx].state = 3;
+                connections[newIdx].state = 10;
+                
+                connections[idx].msg = msg(0, 1, *(uint32_t *)(connections[idx].buffer + secLen - 6),0,NULL,*(short *)(connections[idx].buffer + secLen - 2));
+                int ch = send(pfds[idx].fd, connections[idx].msg, strlen(connections[idx].msg), 0);
+                connections[idx].progres = ch;
+                //printf("I connected Ipv4 address newIdx:%d len:%d\n", newIdx, ch );
 
             } else if (connections[idx].buffer[3] == 0x03) {
                 //prepare dns request
                 /* Enable sock state callbacks, we should not use ares_fds() or ares_getsock()
                 * in modern implementations. */
+                printf("start resolving %d\n", idx);
                 memset(&connections[idx].options, 0, sizeof(connections[idx].options));
                 connections[idx].options.sock_state_cb = sock_state_cb;
                 connections[idx].options.sock_state_cb_data = (void*)idx;
@@ -309,7 +329,7 @@ void collectingMeta(int idx, int bytes_read, char *buffer, int optmask,struct ar
                 }
                 ares_getaddrinfo(connections[idx].channel,connections[idx].name, NULL, hints, addrinfo_cb, (void *)idx);
 
-                connections[idx].state = 2; //todo спорное решение 
+                connections[idx].state = 11; 
 
             }
             
@@ -323,21 +343,43 @@ void collectingMeta(int idx, int bytes_read, char *buffer, int optmask,struct ar
 
 void transfer(int idx, int bytes_read, char *buffer, int mode) { //mode = 1 - POLLIN //mode = 2 - POLLOUT
     if (mode == 1) {
-        for (int j = 0; j < bytes_read; ++j) {
-            connections[idx].buffer[connections[idx].size + j] = buffer[j];
+        int fd = 0;
+        if (connections[idx].server_fd) {
+            fd = connections[idx].server_fd;
+        } else if (connections[idx].client_fd) {
+            fd = connections[idx].client_fd;
+        }/*
+        //printf("fd is %d\n", fd);
+        if (fd) {
+            //printf("\'%s\'\n",connections[fd].buffer);
+            send(pfds[fd].fd, buffer,bytes_read, 0);
+        }*/
+        //write in buffer
+        for (int i = 0; i < bytes_read; i++) {
+            connections[idx].buffer[connections[idx].wp + i] = buffer[i];
         }
+        connections[idx].wp += bytes_read;
         connections[idx].size += bytes_read;
+        printf("now buffer in %d is %d\n", idx, connections[idx].size);
+        pfds[fd].events = POLLOUT | POLLIN;
     } else {
+        //read from buffer
+
         int fd = 0;
         if (connections[idx].server_fd) {
             fd = connections[idx].server_fd;
         } else if (connections[idx].client_fd) {
             fd = connections[idx].client_fd;
         }
-        if (fd) {
-            printf("\'%s\'\n",connections[fd].buffer);
-            send(pfds[fd].fd, connections[fd].buffer,connections[fd].size, 0);
-            connections[fd].size = 0;
+        //printf("fd is %d\n", fd);
+        if (fd && connections[fd].size > 0) {
+            //printf("\'%s\'\n",connections[fd].buffer);
+            int cnt = send(pfds[idx].fd, connections[fd].buffer,connections[fd].size, 0);
+            connections[fd].size -= cnt;
+            connections[fd].wp -= cnt;
+            memmove(connections[fd].buffer, connections[fd].buffer + cnt,connections[fd].size);
+            printf("from %d sended to %d server %d bytes\n",fd, idx,cnt);
+            
         }
     }
 }
@@ -402,6 +444,7 @@ int main() {
     //PROCESS CONNECTIONS
 
     while (1) {
+        //printf("hh\n");
         int ready = poll(pfds, MAX_CONNECTIONS + 1, -1);
         if (ready < 0) {
             perror("poll");
@@ -423,7 +466,7 @@ int main() {
                 continue;
             }
             printf("adds new connection\n");
-            int idx = add_to_pfds(client_fd, POLLIN);
+            int idx = add_to_pfds(client_fd, POLLIN | POLLOUT);
             connections[idx].client_fd = 0;
             connections[idx].server_fd = 0;
             connections[idx].state = 0;
@@ -433,14 +476,15 @@ int main() {
             for (; i < MAX_CONNECTIONS; i++) {
                 //PROCESS DNS
                 if (connections[i].state == -1 && pfds[i].revents != 0) {
+                    printf("hey! %d\n", i);
                     ares_process_fd(connections[connections[i].client_fd].channel, pfds[i].fd, pfds[i].fd);
                 } else if (pfds[i].revents & POLLIN) { //PROCESS INCOMING CONNECTIONS
                     int bytes_read = recv(pfds[i].fd, buffer, BUFFER_SIZE, 0);
 
                     if (bytes_read < 0) {
-                        if (errno != EWOULDBLOCK && errno != EAGAIN) {
+                        if (errno != EWOULDBLOCK && errno != EAGAIN && errno != EINPROGRESS) {
+                            fprintf(stderr, "in  %d connection send err:\n",i);
                             perror("recv");
-                            close(pfds[i].fd);
                             if(connections[i].client_fd) {
                                 close(pfds[connections[i].client_fd].fd);
                                 remove_from_pfds(connections[i].client_fd);    
@@ -449,11 +493,19 @@ int main() {
                                 close(pfds[connections[i].server_fd].fd);
                                 remove_from_pfds(connections[i].server_fd);
                             }
+                            close(pfds[i].fd);
                             remove_from_pfds(i);
                         }
                     } else if (bytes_read == 0) {
-                        printf("Client disconnected: %d\n", pfds[i].fd);
-                        close(pfds[i].fd);
+                        printf("Client disconnected: %d\n", pfds[i].fd);                
+                        if(connections[i].client_fd) {
+                            close(pfds[connections[i].client_fd].fd);
+                            remove_from_pfds(connections[i].client_fd);    
+                        }
+                        if (connections[i].server_fd) {
+                            close(pfds[connections[i].server_fd].fd);
+                            remove_from_pfds(connections[i].server_fd);
+                        }
                         remove_from_pfds(i);
                     } else {
                         if (connections[i].state == 0) {
@@ -464,8 +516,16 @@ int main() {
                             printf("go to collecting meta\n");
                             // Collecting meta
                             collectingMeta(i, bytes_read, buffer, optmask, &hints);
+                            /*int newIdx = add_to_pfds(connections[i].server_fd, POLLOUT | POLLIN);
+                            //printf("newIdx: %d\n",newIdx);
+                            connections[i].server_fd = newIdx;
+                            pfds[2].fd =   connections[i].server_fd;
+                            connections[newIdx].client_fd = i;
+                            connections[newIdx].state = 10;
+                            connections[newIdx].buffer = calloc(BUFFER_SIZE, sizeof(char));
+                            connections[newIdx].size = 0;*/
                         } else if (connections[i].state == 2) {
-                            printf("go to transfer\n");
+                            printf("go to transfer %d %d\n", i, bytes_read);
                             // Transfer
                             transfer(i, bytes_read, buffer, 1);
                         }
@@ -474,8 +534,31 @@ int main() {
 
 
                 if (pfds[i].fd != -1 && pfds[i].revents & POLLOUT) {
+                    //printf("go to send transfer %d %d\n", i, connections[i].state);
                     if (connections[i].state == 2) {
+                        int a = 1;
                         transfer(i, 0, NULL, 2);
+                    } else if (connections[i].state == 3) {
+                        if (connections[i].buffer[3] == 0x01){
+                            if(connections[i].progres == 10) {
+                                connections[i].state = 2;
+                                connections[i].size = 0;
+                                connections[i].wp = 0;
+                                //pfds[i].events = POLLIN | POLLOUT;
+                                connections[connections[i].server_fd].state = 2;
+                                pfds[connections[i].server_fd].events = POLLIN | POLLOUT;
+                                printf("my server is %d with state %d\n",connections[i].server_fd, connections[connections[i].server_fd].state);
+                                free(connections[i].msg);
+                                connections[i].msg = NULL;
+                            } else {
+                                int ch = send(pfds[i].fd, connections[i].msg + connections[i].progres, 10 - connections[i].progres, 0);
+                                connections[i].progres += ch;
+                            }
+                            
+                        }
+                    }  else if (connections[i].state == 10) {
+                        printf("server connected\n");
+                        connections[i].state = 2;
                     }
                 }
             }
