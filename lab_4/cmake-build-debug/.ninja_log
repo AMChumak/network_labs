@@ -1,0 +1,19 @@
+# ninja log v6
+2	646	1733755957733240145	CMakeFiles/lab_4.dir/src/FoodDistributor.cpp.o	564a30ecc4b3d98d
+2	357	1733755957733240145	CMakeFiles/lab_4.dir/src/KillStrategyStd.cpp.o	eae23554b2217dba
+1	212	1733755957732240222	CMakeFiles/lab_4.dir/src/Field.cpp.o	bcb23c8b9dc103bf
+2	585	1733755957733240145	CMakeFiles/lab_4.dir/src/Snake.cpp.o	bea6194bb497e32f
+2	341	1733755957733240145	CMakeFiles/lab_4.dir/src/BornStrategyStd.cpp.o	7e9359ab41620c7c
+212	601	1733755957944223941	CMakeFiles/lab_4.dir/src/CommandExecutor.cpp.o	f464d68d0a6cfd16
+2389	2433	1733755960120057553	lib/libgtest.a	44746d238d70676b
+2433	2455	1733755960164054202	lib/libgtest_main.a	1e1f8b6bc25478ac
+1	926	1733755957732240222	_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o	29c7fed137465f0d
+341	752	1733755958073214050	CMakeFiles/lab_4.dir/src/CommandsQueue.cpp.o	9aaabb49471a3092
+1	2389	1733755957732240222	_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o	f99595242c9e12d3
+2	288	1733755957733240145	CMakeFiles/lab_4.dir/src/StepStrategyStd.cpp.o	3b3b751fada445f4
+357	382	1733755958088212902	CMakeFiles/lab_4.dir/src/Player.cpp.o	9958b09a0b9645a0
+1	1128	1733755957732240222	CMakeFiles/lab_4.dir/tests/gameEngineTests.cpp.o	a6f2ecdf36ee20d6
+288	842	1733755958019218186	CMakeFiles/lab_4.dir/src/FindPlaceStrategyStd.cpp.o	ccd3553610f977f
+2	323	1733755957733240145	CMakeFiles/lab_4.dir/src/EatStrategyStd.cpp.o	aa20ad04a5dd503d
+323	516	1733755958054215505	CMakeFiles/lab_4.dir/src/Commands.cpp.o	48ab6eefb9f2bb
+382	404	1733755958113210987	CMakeFiles/lab_4.dir/src/NetMember.cpp.o	54c62bec2660d112

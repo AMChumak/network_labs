@@ -1,0 +1,4 @@
+/home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/bin/cmake -DCMAKE_BUILD_TYPE=Debug -DCMAKE_MAKE_PROGRAM=/home/anton/CLion-2024.1.4/clion-2024.1.4/bin/ninja/linux/x64/ninja -DCMAKE_CXX_COMPILER=/usr/bin/clang -G Ninja -S /home/anton/Documents/Networks/course3/lab_4 -B /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug
+-- Configuring done (0.1s)
+-- Generating done (0.0s)
+-- Build files have been written to: /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug

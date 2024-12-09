@@ -188,6 +188,10 @@ char *msg(char code, char type, int ipv4Addr, char dnsLen, const char *name, sho
         *((int *)(msg + 4)) = ipv4Addr;
         *((short *)(msg + 8)) = portBE;
         return msg;
+        printf("my msg is :\n");
+        for (int i = 0; i < 10; i++) {
+            printf("%x\n",msg[i]);
+        }
     } else {
         msg = malloc(sizeof(char) * (6 + 1 + dnsLen));
         msg[0] = 5;
