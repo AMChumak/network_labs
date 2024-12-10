@@ -30,17 +30,16 @@ CMAKE_BUILD_TYPE:STRING=Debug
 //Enable colored diagnostics throughout.
 CMAKE_COLOR_DIAGNOSTICS:BOOL=ON
 
-//No help, variable specified on the command line.
-CMAKE_CXX_COMPILER:UNINITIALIZED=/usr/bin/clang
+//CXX compiler
+CMAKE_CXX_COMPILER:FILEPATH=/usr/bin/c++
 
-//LLVM archiver
-CMAKE_CXX_COMPILER_AR:FILEPATH=CMAKE_CXX_COMPILER_AR-NOTFOUND
+//A wrapper around 'ar' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_CXX_COMPILER_AR:FILEPATH=/usr/bin/gcc-ar-13
 
-//`clang-scan-deps` dependency scanner
-CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS:FILEPATH=/usr/bin/clang-scan-deps-18
-
-//Generate index for LLVM archive
-CMAKE_CXX_COMPILER_RANLIB:FILEPATH=CMAKE_CXX_COMPILER_RANLIB-NOTFOUND
+//A wrapper around 'ranlib' adding the appropriate '--plugin' option
+// for the GCC compiler
+CMAKE_CXX_COMPILER_RANLIB:FILEPATH=/usr/bin/gcc-ranlib-13
 
 //Flags used by the CXX compiler during all build types.
 CMAKE_CXX_FLAGS:STRING=
@@ -306,30 +305,6 @@ FETCHCONTENT_UPDATES_DISCONNECTED_GOOGLETEST:BOOL=OFF
 // may want to turn this OFF.)
 INSTALL_GTEST:BOOL=ON
 
-//Path to a file.
-Protobuf_INCLUDE_DIR:PATH=/usr/include
-
-//Path to a library.
-Protobuf_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf.so
-
-//Path to a library.
-Protobuf_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf.so
-
-//Path to a library.
-Protobuf_LITE_LIBRARY_DEBUG:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf-lite.so
-
-//Path to a library.
-Protobuf_LITE_LIBRARY_RELEASE:FILEPATH=/usr/lib/x86_64-linux-gnu/libprotobuf-lite.so
-
-//The Google Protocol Buffers Compiler
-Protobuf_PROTOC_EXECUTABLE:FILEPATH=/usr/bin/protoc
-
-//Path to a library.
-Protobuf_PROTOC_LIBRARY_DEBUG:FILEPATH=Protobuf_PROTOC_LIBRARY_DEBUG-NOTFOUND
-
-//Path to a library.
-Protobuf_PROTOC_LIBRARY_RELEASE:FILEPATH=Protobuf_PROTOC_LIBRARY_RELEASE-NOTFOUND
-
 //Value Computed by CMake
 gmock_BINARY_DIR:STATIC=/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-build/googlemock
 
@@ -377,7 +352,7 @@ gtest_disable_pthreads:BOOL=OFF
 
 //Use shared (DLL) run-time lib even when Google Test is built
 // as static lib.
-gtest_force_shared_crt:BOOL=ON
+gtest_force_shared_crt:BOOL=OFF
 
 //Build gtest with internal symbols hidden in shared libraries.
 gtest_hide_internal_symbols:BOOL=OFF
@@ -421,8 +396,6 @@ CMAKE_CTEST_COMMAND:INTERNAL=/home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake
 CMAKE_CXX_COMPILER-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_AR
 CMAKE_CXX_COMPILER_AR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS
-CMAKE_CXX_COMPILER_CLANG_SCAN_DEPS-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_COMPILER_RANLIB
 CMAKE_CXX_COMPILER_RANLIB-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_CXX_FLAGS
@@ -576,28 +549,10 @@ CMAKE_TAPI-ADVANCED:INTERNAL=1
 CMAKE_UNAME:INTERNAL=/usr/bin/uname
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
-//Details about finding Protobuf
-FIND_PACKAGE_MESSAGE_DETAILS_Protobuf:INTERNAL=[/usr/lib/x86_64-linux-gnu/libprotobuf.so][/usr/include][v3.21.12()]
 //Details about finding Python
 FIND_PACKAGE_MESSAGE_DETAILS_Python:INTERNAL=[/usr/bin/python3.12][cfound components: Interpreter ][v3.12.3()]
 //Details about finding Threads
 FIND_PACKAGE_MESSAGE_DETAILS_Threads:INTERNAL=[TRUE][v()]
-//ADVANCED property for variable: Protobuf_INCLUDE_DIR
-Protobuf_INCLUDE_DIR-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_LIBRARY_DEBUG
-Protobuf_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_LIBRARY_RELEASE
-Protobuf_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_LITE_LIBRARY_DEBUG
-Protobuf_LITE_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_LITE_LIBRARY_RELEASE
-Protobuf_LITE_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_PROTOC_EXECUTABLE
-Protobuf_PROTOC_EXECUTABLE-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_DEBUG
-Protobuf_PROTOC_LIBRARY_DEBUG-ADVANCED:INTERNAL=1
-//ADVANCED property for variable: Protobuf_PROTOC_LIBRARY_RELEASE
-Protobuf_PROTOC_LIBRARY_RELEASE-ADVANCED:INTERNAL=1
 //linker supports push/pop state
 _CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED:INTERNAL=TRUE
 //CMAKE_INSTALL_PREFIX during last run

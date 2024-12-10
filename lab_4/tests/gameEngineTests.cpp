@@ -3,7 +3,6 @@
 //
 
 #include <memory>
-#include <memory>
 #include <gtest/gtest.h>
 
 #include "Field.h"
@@ -128,7 +127,7 @@ TEST_F(gameEngineTest, snake_turn_down_and_step_test)
     }
 }
 
-TEST_F(gameEngineTest, snake_back_grow_test)
+TEST_F(gameEngineTest, snake_grow_back_test)
 {
     snake->grow();
     for (int i = 0, endI = snake->getField()->getHeight(); i < endI; ++i )
