@@ -120,10 +120,8 @@ Pokemons/appPokemons.qmltypes: apppokemons_qmltyperegistrations.cpp
 	/usr/lib/qt6/libexec/qmlcachegen --bare --resource-path /Pokemons/Main.qml -I /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release -I /usr/lib/x86_64-linux-gnu/qt6/qml -i /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/Pokemons/qmldir --resource /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/.rcc/qmake_Pokemons.qrc --resource /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/.rcc/appPokemons_raw_qml_0.qrc -o /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/.rcc/qmlcache/appPokemons_Main_qml.cpp /home/anton/Documents/Networks/course3/lab_3/Main.qml
 
 .rcc/qrc_appPokemons_raw_qml_0.cpp: /home/anton/Documents/Networks/course3/lab_3/Main.qml
-.rcc/qrc_appPokemons_raw_qml_0.cpp: /home/anton/Documents/Networks/course3/lab_3/images/pikachu.png
 .rcc/qrc_appPokemons_raw_qml_0.cpp: /home/anton/Documents/Networks/course3/lab_3/images/pikachu.gif
 .rcc/qrc_appPokemons_raw_qml_0.cpp: /home/anton/Documents/Networks/course3/lab_3/images/search.svg
-.rcc/qrc_appPokemons_raw_qml_0.cpp: /home/anton/Documents/Networks/course3/lab_3/images/faq.gif
 .rcc/qrc_appPokemons_raw_qml_0.cpp: /home/anton/Documents/Networks/course3/lab_3/images/question.gif
 .rcc/qrc_appPokemons_raw_qml_0.cpp: .rcc/appPokemons_raw_qml_0.qrc
 .rcc/qrc_appPokemons_raw_qml_0.cpp: /usr/lib/qt6/libexec/rcc

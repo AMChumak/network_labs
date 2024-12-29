@@ -1,0 +1,14 @@
+-rootPath
+/home/anton/Documents/Networks/course3/test_gui/guiApp
+-cmake-output
+-output-file
+/home/anton/Documents/Networks/course3/test_gui/guiApp/cmake-build-debug/.qt_plugins/Qt6_QmlPlugins_Imports_appguiApp.cmake
+-importPath
+/home/anton/Documents/Networks/course3/test_gui/guiApp/cmake-build-debug/guiApp
+-importPath
+/home/anton/Documents/Networks/course3/test_gui/guiApp/cmake-build-debug
+-importPath
+/usr/lib/x86_64-linux-gnu/qt6/qml
+-qrcFiles
+/home/anton/Documents/Networks/course3/test_gui/guiApp/cmake-build-debug/.rcc/qmake_guiApp.qrc
+/home/anton/Documents/Networks/course3/test_gui/guiApp/cmake-build-debug/.rcc/appguiApp_raw_qml_0.qrc

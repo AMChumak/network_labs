@@ -5,9 +5,9 @@
 #include <memory>
 #include <gtest/gtest.h>
 
-#include "Field.h"
-#include "FoodDistributor.h"
-#include "Snake.h"
+#include "../src/engine/Field.h"
+#include "../src/engine/FoodDistributor.h"
+#include "../src/engine/Snake.h"
 
 
 using namespace gameEngine;

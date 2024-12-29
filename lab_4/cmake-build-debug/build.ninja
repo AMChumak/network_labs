@@ -51,94 +51,220 @@ build cmake_object_order_depends_target_lab_4: phony || cmake_object_order_depen
 
 build CMakeFiles/lab_4.dir/tests/gameEngineTests.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/tests/gameEngineTests.cpp || cmake_object_order_depends_target_lab_4
   DEP_FILE = CMakeFiles/lab_4.dir/tests/gameEngineTests.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
   OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/tests
 
-build CMakeFiles/lab_4.dir/src/Field.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/Field.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/Field.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/engine/Field.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/Field.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/Field.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/Snake.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/Snake.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/Snake.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/FoodDistributor.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/FoodDistributor.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/FoodDistributor.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/StepStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/StepStrategyStd.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/StepStrategyStd.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/EatStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/EatStrategyStd.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/EatStrategyStd.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/KillStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/KillStrategyStd.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/KillStrategyStd.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/BornStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/BornStrategyStd.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/BornStrategyStd.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/FindPlaceStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/FindPlaceStrategyStd.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/FindPlaceStrategyStd.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/Commands.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/Commands.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/Commands.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/CommandExecutor.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/CommandExecutor.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/CommandExecutor.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/CommandsQueue.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/CommandsQueue.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/CommandsQueue.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/Player.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/Player.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/Player.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/snakes.pb.cc.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/snakes.pb.cc || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/snakes.pb.cc.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
   OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
 
-build CMakeFiles/lab_4.dir/src/Snake.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/Snake.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/Snake.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/net/MulticastReceiver.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/MulticastReceiver.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/MulticastReceiver.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
 
-build CMakeFiles/lab_4.dir/src/FoodDistributor.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/FoodDistributor.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/FoodDistributor.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/net/UDPNetworkEnd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/UDPNetworkEnd.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/UDPNetworkEnd.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
 
-build CMakeFiles/lab_4.dir/src/StepStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/StepStrategyStd.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/StepStrategyStd.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/net/ConnectionsList.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/ConnectionsList.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/ConnectionsList.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
 
-build CMakeFiles/lab_4.dir/src/EatStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/EatStrategyStd.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/EatStrategyStd.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/model/FieldState.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/model/FieldState.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/model/FieldState.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/model
 
-build CMakeFiles/lab_4.dir/src/KillStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/KillStrategyStd.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/KillStrategyStd.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/model/PlayersListState.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/model/PlayersListState.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/model/PlayersListState.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/model
 
-build CMakeFiles/lab_4.dir/src/BornStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/BornStrategyStd.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/BornStrategyStd.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/model/GamesListState.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/model/GamesListState.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/model/GamesListState.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/model
 
-build CMakeFiles/lab_4.dir/src/FindPlaceStrategyStd.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/FindPlaceStrategyStd.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/FindPlaceStrategyStd.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/net/ViewerState.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/ViewerState.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/ViewerState.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
 
-build CMakeFiles/lab_4.dir/src/Commands.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/Commands.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/Commands.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/net/NormalState.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/NormalState.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/NormalState.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
 
-build CMakeFiles/lab_4.dir/src/CommandExecutor.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/CommandExecutor.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/CommandExecutor.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/net/DeputyState.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/DeputyState.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/DeputyState.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
 
-build CMakeFiles/lab_4.dir/src/CommandsQueue.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/CommandsQueue.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/CommandsQueue.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/net/MasterState.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/MasterState.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/MasterState.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
 
-build CMakeFiles/lab_4.dir/src/Player.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/Player.cpp || cmake_object_order_depends_target_lab_4
-  DEP_FILE = CMakeFiles/lab_4.dir/src/Player.cpp.o.d
-  FLAGS = -g -fdiagnostics-color=always
+build CMakeFiles/lab_4.dir/src/engine/Launcher.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/Launcher.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/Launcher.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = CMakeFiles/lab_4.dir
-  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/ConfigReader.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/ConfigReader.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/ConfigReader.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/PlayersList.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/PlayersList.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/PlayersList.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/OfflinePlayer.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/OfflinePlayer.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/OfflinePlayer.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/engine/OnlinePlayer.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/engine/OnlinePlayer.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/engine/OnlinePlayer.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/engine
+
+build CMakeFiles/lab_4.dir/src/net/NetMember.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/NetMember.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/NetMember.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
+
+build CMakeFiles/lab_4.dir/src/net/NetMemberState.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/src/net/NetMemberState.cpp || cmake_object_order_depends_target_lab_4
+  DEP_FILE = CMakeFiles/lab_4.dir/src/net/NetMemberState.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/src -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = CMakeFiles/lab_4.dir
+  OBJECT_FILE_DIR = CMakeFiles/lab_4.dir/src/net
 
 
 # =============================================================================
@@ -148,9 +274,9 @@ build CMakeFiles/lab_4.dir/src/Player.cpp.o: CXX_COMPILER__lab_4_unscanned_Debug
 #############################################
 # Link the executable lab_4
 
-build lab_4: CXX_EXECUTABLE_LINKER__lab_4_Debug CMakeFiles/lab_4.dir/tests/gameEngineTests.cpp.o CMakeFiles/lab_4.dir/src/Field.cpp.o CMakeFiles/lab_4.dir/src/Snake.cpp.o CMakeFiles/lab_4.dir/src/FoodDistributor.cpp.o CMakeFiles/lab_4.dir/src/StepStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/EatStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/KillStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/BornStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/FindPlaceStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/Commands.cpp.o CMakeFiles/lab_4.dir/src/CommandExecutor.cpp.o CMakeFiles/lab_4.dir/src/CommandsQueue.cpp.o CMakeFiles/lab_4.dir/src/Player.cpp.o | lib/libgtest_main.a lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
+build lab_4: CXX_EXECUTABLE_LINKER__lab_4_Debug CMakeFiles/lab_4.dir/tests/gameEngineTests.cpp.o CMakeFiles/lab_4.dir/src/engine/Field.cpp.o CMakeFiles/lab_4.dir/src/engine/Snake.cpp.o CMakeFiles/lab_4.dir/src/engine/FoodDistributor.cpp.o CMakeFiles/lab_4.dir/src/engine/StepStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/engine/EatStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/engine/KillStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/engine/BornStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/engine/FindPlaceStrategyStd.cpp.o CMakeFiles/lab_4.dir/src/engine/Commands.cpp.o CMakeFiles/lab_4.dir/src/engine/CommandExecutor.cpp.o CMakeFiles/lab_4.dir/src/engine/CommandsQueue.cpp.o CMakeFiles/lab_4.dir/src/engine/Player.cpp.o CMakeFiles/lab_4.dir/src/snakes.pb.cc.o CMakeFiles/lab_4.dir/src/net/MulticastReceiver.cpp.o CMakeFiles/lab_4.dir/src/net/UDPNetworkEnd.cpp.o CMakeFiles/lab_4.dir/src/net/ConnectionsList.cpp.o CMakeFiles/lab_4.dir/src/model/FieldState.cpp.o CMakeFiles/lab_4.dir/src/model/PlayersListState.cpp.o CMakeFiles/lab_4.dir/src/model/GamesListState.cpp.o CMakeFiles/lab_4.dir/src/net/ViewerState.cpp.o CMakeFiles/lab_4.dir/src/net/NormalState.cpp.o CMakeFiles/lab_4.dir/src/net/DeputyState.cpp.o CMakeFiles/lab_4.dir/src/net/MasterState.cpp.o CMakeFiles/lab_4.dir/src/engine/Launcher.cpp.o CMakeFiles/lab_4.dir/src/engine/ConfigReader.cpp.o CMakeFiles/lab_4.dir/src/engine/PlayersList.cpp.o CMakeFiles/lab_4.dir/src/engine/OfflinePlayer.cpp.o CMakeFiles/lab_4.dir/src/engine/OnlinePlayer.cpp.o CMakeFiles/lab_4.dir/src/net/NetMember.cpp.o CMakeFiles/lab_4.dir/src/net/NetMemberState.cpp.o | lib/libgtest_main.a /usr/lib/x86_64-linux-gnu/libprotobuf.so lib/libgtest.a || lib/libgtest.a lib/libgtest_main.a
   FLAGS = -g
-  LINK_LIBRARIES = lib/libgtest_main.a  lib/libgtest.a
+  LINK_LIBRARIES = lib/libgtest_main.a  /usr/lib/x86_64-linux-gnu/libprotobuf.so  lib/libgtest.a
   OBJECT_DIR = CMakeFiles/lab_4.dir
   POST_BUILD = :
   PRE_LINK = :
@@ -308,7 +434,7 @@ build cmake_object_order_depends_target_gmock: phony || cmake_object_order_depen
 
 build _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o: CXX_COMPILER__gmock_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googlemock/src/gmock-all.cc || cmake_object_order_depends_target_gmock
   DEP_FILE = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o.d
-  FLAGS = -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  FLAGS = -g -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googlemock/include -I/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googlemock -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src
@@ -340,7 +466,7 @@ build cmake_object_order_depends_target_gmock_main: phony || cmake_object_order_
 
 build _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o: CXX_COMPILER__gmock_main_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googlemock/src/gmock_main.cc || cmake_object_order_depends_target_gmock_main
   DEP_FILE = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o.d
-  FLAGS = -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  FLAGS = -g -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googlemock/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googlemock -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src
@@ -442,7 +568,7 @@ build cmake_object_order_depends_target_gtest: phony || _deps/googletest-build/g
 
 build _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o: CXX_COMPILER__gtest_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
   DEP_FILE = _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o.d
-  FLAGS = -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  FLAGS = -g -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -I/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -I/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest.dir/src
@@ -474,7 +600,7 @@ build cmake_object_order_depends_target_gtest_main: phony || cmake_object_order_
 
 build _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o: CXX_COMPILER__gtest_main_unscanned_Debug /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc || cmake_object_order_depends_target_gtest_main
   DEP_FILE = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o.d
-  FLAGS = -g -std=c++17 -fdiagnostics-color=always -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
+  FLAGS = -g -std=c++20 -fdiagnostics-color=always -Wall -Wshadow -Wno-error=dangling-else -DGTEST_HAS_PTHREAD=1 -fexceptions -Wextra -Wno-unused-parameter -Wno-missing-field-initializers
   INCLUDES = -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-src/googletest
   OBJECT_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir
   OBJECT_FILE_DIR = _deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src
@@ -617,14 +743,14 @@ build _deps/googletest-build/googletest/all: phony lib/libgtest.a lib/libgtest_m
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPython.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPython/Support.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/anton/Documents/Networks/course3/lab_4/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake
+build build.ninja: RERUN_CMAKE | /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindProtobuf.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPython.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPython/Support.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/anton/Documents/Networks/course3/lab_4/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPython.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPython/Support.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/anton/Documents/Networks/course3/lab_4/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake: phony
+build /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/BasicConfigVersion-AnyNewerVersion.cmake.in /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCXXInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeCommonLanguageInclude.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeDependentOption.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeGenericSystem.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeInitializeConfigs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeLanguageInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakePackageConfigHelpers.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInformation.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CMakeSystemSpecificInitialize.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckCSourceCompiles.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckIncludeFile.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/CheckLibraryExists.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/CMakeCommonCompilerMacros.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-C.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU-CXX.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Compiler/GNU.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/ExternalProject/shared_internal_commands.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FetchContent/CMakeLists.cmake.in /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageHandleStandardArgs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPackageMessage.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindProtobuf.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPython.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindPython/Support.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/FindThreads.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/GNUInstallDirs.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Internal/CheckSourceCompiles.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-C.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU-CXX.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-GNU.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux-Initialize.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/Linux.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/Platform/UnixPaths.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/SelectLibraryConfigurations.cmake /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/share/cmake-3.28/Modules/WriteBasicConfigVersionFile.cmake /home/anton/Documents/Networks/course3/lab_4/CMakeLists.txt CMakeCache.txt CMakeFiles/3.28.1/CMakeCCompiler.cmake CMakeFiles/3.28.1/CMakeCXXCompiler.cmake CMakeFiles/3.28.1/CMakeSystem.cmake _deps/googletest-src/CMakeLists.txt _deps/googletest-src/googlemock/CMakeLists.txt _deps/googletest-src/googlemock/cmake/gmock.pc.in _deps/googletest-src/googlemock/cmake/gmock_main.pc.in _deps/googletest-src/googletest/CMakeLists.txt _deps/googletest-src/googletest/cmake/Config.cmake.in _deps/googletest-src/googletest/cmake/gtest.pc.in _deps/googletest-src/googletest/cmake/gtest_main.pc.in _deps/googletest-src/googletest/cmake/internal_utils.cmake: phony
 
 
 #############################################

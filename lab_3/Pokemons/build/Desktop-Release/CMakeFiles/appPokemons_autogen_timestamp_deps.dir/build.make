@@ -69,8 +69,8 @@ include CMakeFiles/appPokemons_autogen_timestamp_deps.dir/progress.make
 CMakeFiles/appPokemons_autogen_timestamp_deps: .rcc/qmlcache/appPokemons_qmlcache_loader.cpp
 CMakeFiles/appPokemons_autogen_timestamp_deps: /usr/lib/qt6/libexec/moc
 CMakeFiles/appPokemons_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Qml.so.6.4.2
-CMakeFiles/appPokemons_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
 CMakeFiles/appPokemons_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Quick.so.6.4.2
+CMakeFiles/appPokemons_autogen_timestamp_deps: /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2
 
 .rcc/qmlcache/appPokemons_qmlcache_loader.cpp: /usr/lib/qt6/libexec/qmlcachegen
 .rcc/qmlcache/appPokemons_qmlcache_loader.cpp: .rcc/qmlcache/appPokemons_qml_loader_file_list.rsp

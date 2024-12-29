@@ -1,0 +1,160 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-7f6260535d6dd4a8b1e3.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "guiApp",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-10956a22b0c38a33700b.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-f79a9ccbb303650c39f2.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-334590bfc31a00146f58.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp-Debug-9c8ee3584192ff0c3951.json",
+					"name" : "appguiApp",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp_autogen-Debug-c43ec85fc01fa4f7eecf.json",
+					"name" : "appguiApp_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp_autogen_timestamp_deps-Debug-c426257f26134d433201.json",
+					"name" : "appguiApp_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp_other_files::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp_other_files-Debug-a0441b99528b5229980f.json",
+					"name" : "appguiApp_other_files",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp_qmlimportscan-Debug-d3ff488254c5145e767b.json",
+					"name" : "appguiApp_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp_qmllint-Debug-bfff01050110467c97d2.json",
+					"name" : "appguiApp_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp_qmllint_json-Debug-89c7657493fb9fc6775e.json",
+					"name" : "appguiApp_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp_qmltyperegistration-Debug-d671918cb508d0fcc1f6.json",
+					"name" : "appguiApp_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appguiApp_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appguiApp_tooling-Debug-867b08863c82caaeafbf.json",
+					"name" : "appguiApp_tooling",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/anton/Documents/Networks/course3/test_gui/guiApp/cmake-build-debug",
+		"source" : "/home/anton/Documents/Networks/course3/test_gui/guiApp"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 6
+	}
+}

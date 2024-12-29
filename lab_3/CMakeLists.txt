@@ -34,10 +34,8 @@ qt_add_qml_module(appPokemons
     VERSION 1.0
     QML_FILES
         Main.qml
-        RESOURCES images/pikachu.png
         RESOURCES images/pikachu.gif
         RESOURCES images/search.svg
-        RESOURCES images/faq.gif
         RESOURCES images/question.gif
         SOURCES searchbtnmodel.h searchbtnmodel.cpp
         SOURCES tablemodel.h tablemodel.cpp

@@ -1,0 +1,6 @@
+module guiApp
+typeinfo appguiApp.qmltypes
+prefer :/guiApp/
+Main 1.0 Main.qml
+SessionPage 1.0 SessionPage.qml
+

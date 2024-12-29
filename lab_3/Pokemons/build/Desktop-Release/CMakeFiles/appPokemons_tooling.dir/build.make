@@ -70,30 +70,20 @@ Pokemons/Main.qml: /home/anton/Documents/Networks/course3/lab_3/Main.qml
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating Pokemons/Main.qml"
 	cd /home/anton/Documents/Networks/course3/lab_3 && /usr/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/Main.qml /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/Pokemons/Main.qml
 
-Pokemons/images/pikachu.png: /home/anton/Documents/Networks/course3/lab_3/images/pikachu.png
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Pokemons/images/pikachu.png"
-	cd /home/anton/Documents/Networks/course3/lab_3 && /usr/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/images/pikachu.png /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/Pokemons/images/pikachu.png
-
 Pokemons/images/pikachu.gif: /home/anton/Documents/Networks/course3/lab_3/images/pikachu.gif
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Pokemons/images/pikachu.gif"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Generating Pokemons/images/pikachu.gif"
 	cd /home/anton/Documents/Networks/course3/lab_3 && /usr/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/images/pikachu.gif /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/Pokemons/images/pikachu.gif
 
 Pokemons/images/search.svg: /home/anton/Documents/Networks/course3/lab_3/images/search.svg
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Pokemons/images/search.svg"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Generating Pokemons/images/search.svg"
 	cd /home/anton/Documents/Networks/course3/lab_3 && /usr/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/images/search.svg /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/Pokemons/images/search.svg
 
-Pokemons/images/faq.gif: /home/anton/Documents/Networks/course3/lab_3/images/faq.gif
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Generating Pokemons/images/faq.gif"
-	cd /home/anton/Documents/Networks/course3/lab_3 && /usr/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/images/faq.gif /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/Pokemons/images/faq.gif
-
 Pokemons/images/question.gif: /home/anton/Documents/Networks/course3/lab_3/images/question.gif
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Generating Pokemons/images/question.gif"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --blue --bold --progress-dir=/home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Generating Pokemons/images/question.gif"
 	cd /home/anton/Documents/Networks/course3/lab_3 && /usr/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/images/question.gif /home/anton/Documents/Networks/course3/lab_3/Pokemons/build/Desktop-Release/Pokemons/images/question.gif
 
 appPokemons_tooling: Pokemons/Main.qml
-appPokemons_tooling: Pokemons/images/faq.gif
 appPokemons_tooling: Pokemons/images/pikachu.gif
-appPokemons_tooling: Pokemons/images/pikachu.png
 appPokemons_tooling: Pokemons/images/question.gif
 appPokemons_tooling: Pokemons/images/search.svg
 appPokemons_tooling: CMakeFiles/appPokemons_tooling.dir/build.make

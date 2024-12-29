@@ -1,8 +1,6 @@
 file(REMOVE_RECURSE
   "Pokemons/Main.qml"
-  "Pokemons/images/faq.gif"
   "Pokemons/images/pikachu.gif"
-  "Pokemons/images/pikachu.png"
   "Pokemons/images/question.gif"
   "Pokemons/images/search.svg"
 )
