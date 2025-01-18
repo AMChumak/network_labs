@@ -45,8 +45,8 @@ namespace gameEngine
             bool res = strategy.born(command.userId, snakes, foodDistributor, fieldp, findPlaceStrategy);
 
 
-            std::shared_ptr<Player> owner = players->getPlayer(command.userId);
-            if(owner->getPlayerId() == -1)
+            Player &owner = players->getPlayer(command.userId);
+            if(owner.getPlayerId() == -1)
             {
                 std::cerr << "user was deleted before creating ended" << std::endl;
                 return;
@@ -56,7 +56,7 @@ namespace gameEngine
                 GameMessage msg;
                 GameMessage_AckMsg ack_msg;
                 msg.set_allocated_ack(&ack_msg);
-                owner->showCommandResult(msg);
+                owner.showCommandResult(msg);
             } else
             {
                 GameMessage msg;

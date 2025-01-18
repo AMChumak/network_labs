@@ -6,12 +6,6 @@
 
 namespace gameEngine
 {
-    Launcher::Launcher(std::shared_ptr<NetMember> netMemberI, std::shared_ptr<modelSpace::FieldState> fieldStateI,
-        std::shared_ptr<modelSpace::PlayersListState> playersListStateI) :
-    netMember{std::move(netMemberI)}, fieldStatePtr{std::move(fieldStateI)}, playersListStatePtr{std::move(playersListStatePtr)}
-    {
-    }
-
     void Launcher::launchGame()
     {
         std::lock_guard<std::mutex> lock(launcherMtx);
@@ -33,12 +27,11 @@ namespace gameEngine
 
         //todo по-хорошему здесь надо проверить исключения
 
-
         //launch thread
         gameEngineThread = boost::thread(gameEngineMain);
     }
 
-    void Launcher::launchGame(int width, int height, const GameState& state, const std::vector<std::shared_ptr<Player>>& players)
+    void Launcher::launchGame(int width, int height, const GameState& state)
     {
         std::lock_guard<std::mutex> lock(launcherMtx);
 
@@ -57,11 +50,7 @@ namespace gameEngine
             gameSnakes->emplace_back(snake);
         }
         gameFoodDistributor = std::make_shared<FoodDistributor>(gameField, gameSnakes, state);
-        playersList = std::make_shared<PlayersList>();
-        for (const auto& player : players)
-        {
-            playersList->addPlayer(player);
-        }
+        playersList = std::make_shared<PlayersList>(state.players().players());
         commandExecutor= std::make_shared<CommandExecutor>(gameField, gameSnakes, gameFoodDistributor, playersList);
         commandsQueue = std::make_shared<CommandsQueue>();
         //todo по-хорошему здесь надо проверить исключения
@@ -74,24 +63,24 @@ namespace gameEngine
     {
 
     }
-
-
-    void Launcher::addSteerCommand(GameMessage_SteerMsg)
+    
+    void Launcher::addSteerCommand(const GameMessage_SteerMsg& msg)
     {
+        Direction direction =  convertNetToEngineDirection(msg.direction());
+        CommandTurn turn;
+        turn.direction = direction;
+        commandsQueue->addCommand(turn);
     }
 
-    int Launcher::addUser()
+    int Launcher::addPlayer(const std::string& name)
     {
-
-        return ;
+        int newPlayerId = playersList->addPlayer(name);
+        commandsQueue->addCommand()
+        return newPlayerId;
     }
 
-    int Launcher::addUser(address userAddr, unsigned short userPort)
+    void Launcher::removePlayer(const int& id)
     {
-
-    }
-
-    void Launcher::removeUser(const int& id)
-    {
+        playersList->removePlayer(id);
     }
 } // gameEngine

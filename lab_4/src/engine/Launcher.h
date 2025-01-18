@@ -5,7 +5,6 @@
 #ifndef LAUNCHER_H
 #define LAUNCHER_H
 #include <memory>
-#include "net/NetMember.h"
 
 #include "CommandsQueue.h"
 #include "FoodDistributor.h"
@@ -18,14 +17,12 @@ namespace gameEngine {
 
 class Launcher {
 public:
-    Launcher(std::shared_ptr<NetMember> netMemberI, std::shared_ptr<modelSpace::FieldState> fieldStateI, std::shared_ptr<modelSpace::PlayersListState> playersListStateI);
     void launchGame();
-    void launchGame(int width, int height, const GameState& state, const std::vector<std::shared_ptr<Player>>& players);
+    void launchGame(int width, int height, const GameState& state);
 
-    void addSteerCommand(GameMessage_SteerMsg);
-    void addUser();
-    void addUser(address userAddr, unsigned short userPort);
-    void removeUser(const int &id);
+    void addSteerCommand(const GameMessage_SteerMsg&);
+    int addPlayer(const std::string& name);
+    void removePlayer(const int &id);
 
 private:
     void gameEngineMain();
@@ -40,11 +37,6 @@ private:
     std::shared_ptr<std::vector<Snake>> gameSnakes;
     std::shared_ptr<FoodDistributor> gameFoodDistributor;
     std::shared_ptr<Field> gameField;
-
-    std::shared_ptr<netEngine::NetMember> netMember;
-
-    std::shared_ptr<modelSpace::FieldState> fieldStatePtr;
-    std::shared_ptr<modelSpace::PlayersListState> playersListStatePtr;
 };
 
 } // gameEngine

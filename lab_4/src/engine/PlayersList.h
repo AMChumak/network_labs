@@ -12,15 +12,18 @@ namespace gameEngine {
 
 class PlayersList {
 public:
+    PlayersList();
     PlayersList(const ::google::protobuf::RepeatedPtrField< ::GamePlayer >& gamePlayers);
-    void addPlayer(std::shared_ptr<Player>);
+    int addPlayer(const std::string& name, const int &score = 0);
     void removePlayer(const int &id);
-    std::shared_ptr<Player> getPlayer(const int &id);
-};
-    std::mutex stateMtx;
-    std::vector<std::shared_ptr<Player>> players;
-    int maxId = 1;
+    Player &getPlayer(const int &id);
 
+    static Player incorrectPlayer;
+private:
+    std::mutex stateMtx;
+    std::vector<Player> players;
+    int maxId = 0;
+};
 } // gameEngine
 
 #endif //PLAYERSLIST_H

@@ -6,7 +6,7 @@
 #define STEPSTRATEGYSTD_H
 #include "MoveStrategies.h"
 
-namespace ganeEngine {
+namespace gameEngine {
 
 class StepStrategyStd : public gameEngine::StepStrategyI {
 public:

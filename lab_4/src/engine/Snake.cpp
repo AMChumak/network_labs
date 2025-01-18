@@ -10,6 +10,30 @@
 
 namespace gameEngine
 {
+    Direction convertNetToEngineDirection(::Direction direction)
+    {
+        switch (direction)
+        {
+        case ::UP: return UP;
+        case ::DOWN: return DOWN;
+        case ::LEFT: return LEFT;
+        case ::RIGHT: return RIGHT;
+        }
+        return UP;
+    }
+
+    ::Direction convertEngineToNet(Direction direction)
+    {
+        switch (direction)
+        {
+        case UP: return ::UP;
+        case DOWN: return ::DOWN;
+        case LEFT: return ::LEFT;
+        case RIGHT: return ::RIGHT;
+        }
+        return ::UP;
+    }
+
     Snake::Snake(const int& iOwnerId, const Coord& iHeadCoord, const Direction& iHeadDirection,
                  std::shared_ptr<Field> fieldPtr) : ownerId(iOwnerId), headDirection(iHeadDirection),
                                                     field{std::move(fieldPtr)}

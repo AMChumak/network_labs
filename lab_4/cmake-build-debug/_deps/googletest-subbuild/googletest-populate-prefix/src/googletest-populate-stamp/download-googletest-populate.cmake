@@ -21,14 +21,14 @@ function(check_file_hash has_hash hash_is_good)
 
   set("${has_hash}" TRUE PARENT_SCOPE)
 
-  message(STATUS "verifying file...
+  message(VERBOSE "verifying file...
        file='/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'")
 
   file("" "/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip" actual_value)
 
   if(NOT "${actual_value}" STREQUAL "")
     set("${hash_is_good}" FALSE PARENT_SCOPE)
-    message(STATUS " hash of
+    message(VERBOSE " hash of
     /home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip
   does not match expected value
     expected: ''
@@ -44,7 +44,7 @@ function(sleep_before_download attempt)
   endif()
 
   if(attempt EQUAL 1)
-    message(STATUS "Retrying...")
+    message(VERBOSE "Retrying...")
     return()
   endif()
 
@@ -66,34 +66,26 @@ function(sleep_before_download attempt)
     set(sleep_seconds 1200)
   endif()
 
-  message(STATUS "Retry after ${sleep_seconds} seconds (attempt #${attempt}) ...")
+  message(VERBOSE "Retry after ${sleep_seconds} seconds (attempt #${attempt}) ...")
 
   execute_process(COMMAND "${CMAKE_COMMAND}" -E sleep "${sleep_seconds}")
 endfunction()
-
-if("/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip" STREQUAL "")
-  message(FATAL_ERROR "LOCAL can't be empty")
-endif()
-
-if("https://github.com/google/googletest/archive/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip" STREQUAL "")
-  message(FATAL_ERROR "REMOTE can't be empty")
-endif()
 
 if(EXISTS "/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
   check_file_hash(has_hash hash_is_good)
   if(has_hash)
     if(hash_is_good)
-      message(STATUS "File already exists and hash match (skip download):
+      message(VERBOSE "File already exists and hash match (skip download):
   file='/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
   =''"
       )
       return()
     else()
-      message(STATUS "File already exists but hash mismatch. Removing...")
+      message(VERBOSE "File already exists but hash mismatch. Removing...")
       file(REMOVE "/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
     endif()
   else()
-    message(STATUS "File already exists but no hash specified (use URL_HASH):
+    message(VERBOSE "File already exists but no hash specified (use URL_HASH):
   file='/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
 Old file will be removed and new file downloaded from URL."
     )
@@ -103,22 +95,23 @@ endif()
 
 set(retry_number 5)
 
-message(STATUS "Downloading...
+message(VERBOSE "Downloading...
    dst='/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip'
    timeout='none'
    inactivity timeout='none'"
 )
-set(download_retry_codes 7 6 8 15 28)
+set(download_retry_codes 7 6 8 15 28 35)
 set(skip_url_list)
 set(status_code)
 foreach(i RANGE ${retry_number})
   if(status_code IN_LIST download_retry_codes)
     sleep_before_download(${i})
   endif()
-  foreach(url https://github.com/google/googletest/archive/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip)
+  foreach(url IN ITEMS [====[https://github.com/google/googletest/archive/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip]====])
     if(NOT url IN_LIST skip_url_list)
-      message(STATUS "Using src='${url}'")
+      message(VERBOSE "Using src='${url}'")
 
+      
       
       
       
@@ -142,10 +135,10 @@ foreach(i RANGE ${retry_number})
       if(status_code EQUAL 0)
         check_file_hash(has_hash hash_is_good)
         if(has_hash AND NOT hash_is_good)
-          message(STATUS "Hash mismatch, removing...")
+          message(VERBOSE "Hash mismatch, removing...")
           file(REMOVE "/home/anton/Documents/Networks/course3/lab_4/cmake-build-debug/_deps/googletest-subbuild/googletest-populate-prefix/src/58d77fa8070e8cec2dc1ed015d66b454c8d78850.zip")
         else()
-          message(STATUS "Downloading... done")
+          message(VERBOSE "Downloading... done")
           return()
         endif()
       else()

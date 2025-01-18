@@ -60,10 +60,6 @@ add_executable(lab_4
         src/engine/ConfigReader.h
         src/engine/PlayersList.cpp
         src/engine/PlayersList.h
-        src/engine/OfflinePlayer.cpp
-        src/engine/OfflinePlayer.h
-        src/engine/OnlinePlayer.cpp
-        src/engine/OnlinePlayer.h
         src/net/NetMember.cpp
         src/net/NetMemberState.cpp
         #src/NetMember.cpp

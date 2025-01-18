@@ -5,12 +5,12 @@
 #include <QJsonObject>
 #include <iostream>
 
-int TableModel::rowCount(const QModelIndex &) const
+int TableModel::rowCount(const QModelIndex&) const
 {
     return 3;
 }
 
-int TableModel::columnCount(const QModelIndex &) const
+int TableModel::columnCount(const QModelIndex&) const
 {
     return 2;
 }
@@ -26,19 +26,25 @@ void TableModel::setName(QString newName)
     emit nameChanged(QString(name.c_str()));
 }
 
-QVariant TableModel::data(const QModelIndex &index, int role) const
+QVariant TableModel::data(const QModelIndex& index, int role) const
 {
-    switch (role) {
+    switch (role)
+    {
     case Qt::DisplayRole:
-        if (index.column() == 1) {
-            switch (index.row()) {
+        if (index.column() == 1)
+        {
+            switch (index.row())
+            {
             case 0: return QString("%1").arg(height);
             case 1: return QString("%1").arg(weight);
             case 2: return QString("%1").arg(experience);
             default: return QVariant();
             }
-        } else {
-            switch (index.row()) {
+        }
+        else
+        {
+            switch (index.row())
+            {
             case 0: return QString("Height");
             case 1: return QString("Weight");
             case 2: return QString("Experience");
@@ -54,18 +60,20 @@ QVariant TableModel::data(const QModelIndex &index, int role) const
 
 QHash<int, QByteArray> TableModel::roleNames() const
 {
-    return { {Qt::DisplayRole, "display"} };
+    return {{Qt::DisplayRole, "display"}};
 }
 
-void TableModel::searchStats(const QString &name)
+void TableModel::searchStats(const QString& name)
 {
-    if(!name.trimmed().isEmpty()) {
-        if (reply) {
+    if (!name.trimmed().isEmpty())
+    {
+        if (reply)
+        {
             reply->abort();
             reply->deleteLater();
             reply = nullptr;
         }
-        const QString &queryUrlStr = "https://pokeapi.co/api/v2/pokemon/";
+        const QString& queryUrlStr = "https://pokeapi.co/api/v2/pokemon/";
 
         QUrlQuery query;
         query.addQueryItem("format", "json");
@@ -76,7 +84,8 @@ void TableModel::searchStats(const QString &name)
 
 void TableModel::parseData()
 {
-    if (reply->error() == QNetworkReply::NoError) {
+    if (reply->error() == QNetworkReply::NoError)
+    {
         beginResetModel();
         weight = 0;
         height = 0;
@@ -90,7 +99,9 @@ void TableModel::parseData()
         name = jsonDocument["name"].toString().toStdString();
         endResetModel();
         emit nameChanged(QString{name.c_str()});
-    } else {
+    }
+    else
+    {
         beginResetModel();
         weight = 0;
         height = 0;

@@ -213,7 +213,7 @@ build all_qmllint_json: phony appPokemons_qmllint_json
 #############################################
 # Utility command for appPokemons_tooling
 
-build appPokemons_tooling: phony Pokemons/Main.qml Pokemons/images/pikachu.png Pokemons/images/pikachu.gif Pokemons/images/search.svg Pokemons/images/faq.gif Pokemons/images/question.gif
+build appPokemons_tooling: phony Pokemons/Main.qml Pokemons/images/pikachu.gif Pokemons/images/search.svg Pokemons/images/question.gif
 
 
 #############################################
@@ -347,7 +347,7 @@ build .rcc/qmlcache/appPokemons_Main_qml.cpp | ${cmake_ninja_workdir}.rcc/qmlcac
 #############################################
 # Custom command for .rcc/qrc_appPokemons_raw_qml_0.cpp
 
-build .rcc/qrc_appPokemons_raw_qml_0.cpp | ${cmake_ninja_workdir}.rcc/qrc_appPokemons_raw_qml_0.cpp: CUSTOM_COMMAND /home/anton/Documents/Networks/course3/lab_3/Main.qml /home/anton/Documents/Networks/course3/lab_3/images/pikachu.png /home/anton/Documents/Networks/course3/lab_3/images/pikachu.gif /home/anton/Documents/Networks/course3/lab_3/images/search.svg /home/anton/Documents/Networks/course3/lab_3/images/faq.gif /home/anton/Documents/Networks/course3/lab_3/images/question.gif .rcc/appPokemons_raw_qml_0.qrc /usr/lib/qt6/libexec/rcc || appPokemons_autogen appPokemons_autogen_timestamp_deps appPokemons_qmlimportscan appPokemons_tooling
+build .rcc/qrc_appPokemons_raw_qml_0.cpp | ${cmake_ninja_workdir}.rcc/qrc_appPokemons_raw_qml_0.cpp: CUSTOM_COMMAND /home/anton/Documents/Networks/course3/lab_3/Main.qml /home/anton/Documents/Networks/course3/lab_3/images/pikachu.gif /home/anton/Documents/Networks/course3/lab_3/images/search.svg /home/anton/Documents/Networks/course3/lab_3/images/question.gif .rcc/appPokemons_raw_qml_0.qrc /usr/lib/qt6/libexec/rcc || appPokemons_autogen appPokemons_autogen_timestamp_deps appPokemons_qmlimportscan appPokemons_tooling
   COMMAND = cd /home/anton/Documents/Networks/course3/lab_3/cmake-build-debug && /usr/lib/qt6/libexec/rcc --output /home/anton/Documents/Networks/course3/lab_3/cmake-build-debug/.rcc/qrc_appPokemons_raw_qml_0.cpp --name appPokemons_raw_qml_0 /home/anton/Documents/Networks/course3/lab_3/cmake-build-debug/.rcc/appPokemons_raw_qml_0.qrc
   DESC = Running rcc for resource appPokemons_raw_qml_0
   restat = 1
@@ -402,15 +402,6 @@ build Pokemons/Main.qml | ${cmake_ninja_workdir}Pokemons/Main.qml: CUSTOM_COMMAN
 
 
 #############################################
-# Custom command for Pokemons/images/pikachu.png
-
-build Pokemons/images/pikachu.png | ${cmake_ninja_workdir}Pokemons/images/pikachu.png: CUSTOM_COMMAND /home/anton/Documents/Networks/course3/lab_3/images/pikachu.png
-  COMMAND = cd /home/anton/Documents/Networks/course3/lab_3 && /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/images/pikachu.png /home/anton/Documents/Networks/course3/lab_3/cmake-build-debug/Pokemons/images/pikachu.png
-  DESC = Generating Pokemons/images/pikachu.png
-  restat = 1
-
-
-#############################################
 # Custom command for Pokemons/images/pikachu.gif
 
 build Pokemons/images/pikachu.gif | ${cmake_ninja_workdir}Pokemons/images/pikachu.gif: CUSTOM_COMMAND /home/anton/Documents/Networks/course3/lab_3/images/pikachu.gif
@@ -425,15 +416,6 @@ build Pokemons/images/pikachu.gif | ${cmake_ninja_workdir}Pokemons/images/pikach
 build Pokemons/images/search.svg | ${cmake_ninja_workdir}Pokemons/images/search.svg: CUSTOM_COMMAND /home/anton/Documents/Networks/course3/lab_3/images/search.svg
   COMMAND = cd /home/anton/Documents/Networks/course3/lab_3 && /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/images/search.svg /home/anton/Documents/Networks/course3/lab_3/cmake-build-debug/Pokemons/images/search.svg
   DESC = Generating Pokemons/images/search.svg
-  restat = 1
-
-
-#############################################
-# Custom command for Pokemons/images/faq.gif
-
-build Pokemons/images/faq.gif | ${cmake_ninja_workdir}Pokemons/images/faq.gif: CUSTOM_COMMAND /home/anton/Documents/Networks/course3/lab_3/images/faq.gif
-  COMMAND = cd /home/anton/Documents/Networks/course3/lab_3 && /home/anton/CLion-2024.1.4/clion-2024.1.4/bin/cmake/linux/x64/bin/cmake -E copy /home/anton/Documents/Networks/course3/lab_3/images/faq.gif /home/anton/Documents/Networks/course3/lab_3/cmake-build-debug/Pokemons/images/faq.gif
-  DESC = Generating Pokemons/images/faq.gif
   restat = 1
 
 
@@ -464,7 +446,7 @@ build .qt_plugins/Qt6_QmlPlugins_Imports_appPokemons.cmake | ${cmake_ninja_workd
 #############################################
 # Phony custom command for CMakeFiles/appPokemons_autogen_timestamp_deps
 
-build CMakeFiles/appPokemons_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appPokemons_autogen_timestamp_deps: phony .rcc/qmlcache/appPokemons_qmlcache_loader.cpp /usr/lib/qt6/libexec/moc /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Qml.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Quick.so.6.4.2
+build CMakeFiles/appPokemons_autogen_timestamp_deps | ${cmake_ninja_workdir}CMakeFiles/appPokemons_autogen_timestamp_deps: phony .rcc/qmlcache/appPokemons_qmlcache_loader.cpp /usr/lib/x86_64-linux-gnu/libQt6Network.so.6.4.2 /usr/lib/x86_64-linux-gnu/libQt6Qml.so.6.4.2 /usr/lib/qt6/libexec/moc /usr/lib/x86_64-linux-gnu/libQt6Quick.so.6.4.2
 
 
 #############################################

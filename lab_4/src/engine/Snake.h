@@ -23,6 +23,10 @@ namespace gameEngine
         RIGHT,
     };
 
+    Direction convertNetToEngineDirection(::Direction direction);
+
+    ::Direction convertEngineToNet(Direction direction);
+
     struct CoordDirectionPair
     {
         Coord coord;

@@ -1,0 +1,14 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/gcc",
+      "-c",
+      "-o",
+      "a.out",
+      "main.c"
+    ],
+    "directory": "/home/anton/Documents/Networks/course3/untitled",
+    "file": "/home/anton/Documents/Networks/course3/untitled/main.c",
+    "output": "/home/anton/Documents/Networks/course3/untitled/a.out"
+  }
+]

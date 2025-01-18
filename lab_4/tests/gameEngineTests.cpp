@@ -110,7 +110,7 @@ TEST_F(gameEngineTest, snake_step_forward_test)
 
 TEST_F(gameEngineTest, snake_turn_down_and_step_test)
 {
-    snake->turn(DOWN);
+    snake->turn(gameEngine::Direction::DOWN);
     snake->step();
     for (int i = 0, endI = snake->getField()->getHeight(); i < endI; ++i )
     {
@@ -147,9 +147,9 @@ TEST_F(gameEngineTest, snake_grow_back_test)
 
 TEST_F(gameEngineTest, snake_turn_grow_test)
 {
-    snake->turn(DOWN);
+    snake->turn(gameEngine::Direction::DOWN);
     snake->step();
-    snake->turn(RIGHT);
+    snake->turn(gameEngine::Direction::RIGHT);
     snake->step();
     snake->grow();
     for (int i = 0, endI = snake->getField()->getHeight(); i < endI; ++i )

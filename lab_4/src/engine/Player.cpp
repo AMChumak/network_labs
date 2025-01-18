@@ -5,7 +5,7 @@
 #include "Player.h"
 
 namespace gameEngine {
-    Player::Player(int iId, std::string iname, int score): id_{iId}, name{iname}, score_{score}
+    Player::Player(int iId, std::string iName, int score): id_{iId}, name{iName}, score_{score}
     {
     }
 
