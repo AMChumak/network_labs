@@ -9,6 +9,19 @@ namespace engine {
     {
     }
 
+    /*!
+     *
+     * @return state of player (only id, name, score)
+     */
+    GamePlayer Player::generate_state() const
+    {
+        GamePlayer player_state;
+        player_state.set_id(id);
+        player_state.set_name(name);
+        player_state.set_score(score);
+        return player_state;
+    }
+
     int Player::get_player_id() const
     {
         return id;

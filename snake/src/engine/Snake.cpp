@@ -99,6 +99,27 @@ namespace engine
         }
     }
 
+
+    /*!
+     *
+     * @return state of snake
+     */
+    GameState_Snake Snake::generate_state()
+    {
+
+        GameState_Snake new_snake;
+        new_snake.set_head_direction(head_direction);
+        new_snake.set_player_id(owner_id);
+        new_snake.set_state(GameState_Snake_SnakeState_ALIVE);
+        for (const auto& coord : key_coords)
+        {
+            GameState_Coord *point = new_snake.add_points();
+            point->set_x(coord.x);
+            point->set_y(coord.y);
+        }
+        return new_snake;
+    }
+
     /*!
      * \brief moves the snake forward 1 cell in the direction of the head
      */

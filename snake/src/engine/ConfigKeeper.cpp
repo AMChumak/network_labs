@@ -3,13 +3,10 @@
 #include <fstream>
 
 namespace engine {
-    int ConfigKeeper::width = 40;
-    int ConfigKeeper::height = 30;
-    int ConfigKeeper::food_static = 1;
-    int ConfigKeeper::state_delay_ms = 1000;
 
     void ConfigKeeper::read_from_file()
     {
+        std::lock_guard<std::mutex> lock{config_mutex};
         if(std::ifstream conf_file{"snakes.conf"}; conf_file.is_open())
         {
             std::string conf_line;
@@ -87,7 +84,7 @@ namespace engine {
 
     void ConfigKeeper::read_from_msg(const GameConfig& config)
     {
-
+        std::lock_guard<std::mutex> lock{config_mutex};
         width = (config.has_width()) ? config.width() : 40;
         height = (config.has_height()) ? config.height() : 30;
         food_static = (config.has_food_static()) ? config.food_static() : 1;
@@ -96,6 +93,7 @@ namespace engine {
 
     void ConfigKeeper::write_to_file()
     {
+        std::lock_guard<std::mutex> lock{config_mutex};
         if (std::ofstream conf_file{"snakes.conf"}; conf_file.is_open())
         {
             conf_file << "width =" << width << std::endl;
@@ -108,21 +106,25 @@ namespace engine {
 
     int ConfigKeeper::get_width()
     {
+        std::lock_guard<std::mutex> lock{config_mutex};
         return width;
     }
 
     int ConfigKeeper::get_height()
     {
+        std::lock_guard<std::mutex> lock{config_mutex};
         return height;
     }
 
     int ConfigKeeper::get_food_static()
     {
+        std::lock_guard<std::mutex> lock{config_mutex};
         return food_static;
     }
 
     int ConfigKeeper::get_state_delay_ms()
     {
+        std::lock_guard<std::mutex> lock{config_mutex};
         return state_delay_ms;
     }
 } // engine

@@ -458,6 +458,13 @@ build src/engine/CMakeFiles/engine.dir/ConfigKeeper.cpp.o: CXX_COMPILER__engine_
   OBJECT_DIR = src/engine/CMakeFiles/engine.dir
   OBJECT_FILE_DIR = src/engine/CMakeFiles/engine.dir
 
+build src/engine/CMakeFiles/engine.dir/Launcher.cpp.o: CXX_COMPILER__engine_unscanned_Debug /home/anton/Documents/Networks/course3/snake/src/engine/Launcher.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = src/engine/CMakeFiles/engine.dir/Launcher.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/snake/src
+  OBJECT_DIR = src/engine/CMakeFiles/engine.dir
+  OBJECT_FILE_DIR = src/engine/CMakeFiles/engine.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target engine
@@ -466,7 +473,7 @@ build src/engine/CMakeFiles/engine.dir/ConfigKeeper.cpp.o: CXX_COMPILER__engine_
 #############################################
 # Link the static library src/engine/libengine.a
 
-build src/engine/libengine.a: CXX_STATIC_LIBRARY_LINKER__engine_Debug src/engine/CMakeFiles/engine.dir/Field.cpp.o src/engine/CMakeFiles/engine.dir/Snake.cpp.o src/engine/CMakeFiles/engine.dir/FoodDistributor.cpp.o src/engine/CMakeFiles/engine.dir/StepStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/EatStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/KillStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/FindPlaceStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/BornStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/Player.cpp.o src/engine/CMakeFiles/engine.dir/PlayersList.cpp.o src/engine/CMakeFiles/engine.dir/Commands.cpp.o src/engine/CMakeFiles/engine.dir/CommandExecutor.cpp.o src/engine/CMakeFiles/engine.dir/CommandsQueue.cpp.o src/engine/CMakeFiles/engine.dir/ConfigKeeper.cpp.o || src/proto/libproto.a
+build src/engine/libengine.a: CXX_STATIC_LIBRARY_LINKER__engine_Debug src/engine/CMakeFiles/engine.dir/Field.cpp.o src/engine/CMakeFiles/engine.dir/Snake.cpp.o src/engine/CMakeFiles/engine.dir/FoodDistributor.cpp.o src/engine/CMakeFiles/engine.dir/StepStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/EatStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/KillStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/FindPlaceStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/BornStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/Player.cpp.o src/engine/CMakeFiles/engine.dir/PlayersList.cpp.o src/engine/CMakeFiles/engine.dir/Commands.cpp.o src/engine/CMakeFiles/engine.dir/CommandExecutor.cpp.o src/engine/CMakeFiles/engine.dir/CommandsQueue.cpp.o src/engine/CMakeFiles/engine.dir/ConfigKeeper.cpp.o src/engine/CMakeFiles/engine.dir/Launcher.cpp.o || src/proto/libproto.a
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = src/engine/CMakeFiles/engine.dir
   POST_BUILD = :

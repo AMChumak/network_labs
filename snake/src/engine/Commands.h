@@ -5,7 +5,6 @@
 #ifndef COMMANDI_H
 #define COMMANDI_H
 #include "CommandExecutor.h"
-#include "Snake.h"
 #include "proto/snakes.pb.h"
 
 namespace engine
@@ -22,13 +21,17 @@ namespace engine
 
     struct CommandCreate : public CommandI
     {
+        CommandCreate() = default;
+        CommandCreate(int user_id);
         void visit(CommandExecutor &executor) override;
     };
 
     struct CommandTurn : public CommandI
     {
+        CommandTurn() = default;
+        CommandTurn(int user_id, Direction direction);
         void visit(CommandExecutor &executor) override;
-        ::Direction direction;
+        Direction direction;
     };
 } // engine
 

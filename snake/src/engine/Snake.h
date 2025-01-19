@@ -25,6 +25,8 @@ namespace engine
 
         Snake(const GameState_Snake &i_snake, const std::shared_ptr<Field>& field_ptr);
 
+        GameState_Snake generate_state();
+
         void step();
         void grow();
         void turn(Direction direction);

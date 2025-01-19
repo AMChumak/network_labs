@@ -21,9 +21,25 @@ namespace engine
         std::lock_guard<std::mutex> lock{set_mutex};
         for (auto player : players.players())
         {
-            this->players.emplace_back(player.id(), player.name(), player.score());
+            this->players.push_back(std::make_shared<Player>(player.id(), player.name(), player.score()));
             ids_set.insert(player.id());
         }
+    }
+
+    /*!
+     *
+     * @return current state of plyers (only id, name, score)
+     */
+    GamePlayers PlayersList::generate_state()
+    {
+        std::lock_guard<std::mutex> lock{set_mutex};
+        GamePlayers players_state;
+        for (auto player : players)
+        {
+            auto *player_state = players_state.add_players();
+            *player_state = player->generate_state();
+        }
+        return players_state;
     }
 
     /*!
@@ -51,7 +67,7 @@ namespace engine
      *
      * @return constant vector of all players
      */
-    const std::vector<Player>& PlayersList::get_players() const
+    const std::vector<std::shared_ptr<Player>>& PlayersList::get_players() const
     {
         return players;
     }
@@ -59,16 +75,16 @@ namespace engine
     /*!
      * @brief gets player by id
      * @param [in] player_id
-     * @return reference to player in success case, reference to invalid_player else
+     * @return shared pointer to player in success case, reference to invalid_player else
      */
-    Player& PlayersList::get_player(const int player_id)
+    std::shared_ptr<Player> PlayersList::get_player(const int player_id)
     {
         for (auto& player : players)
         {
-            if (player.get_player_id() == player_id)
+            if (player->get_player_id() == player_id)
                 return player;
         }
-        return invalid_player;
+        return std::make_shared<Player>(invalid_player);
     }
 
 
@@ -84,7 +100,7 @@ namespace engine
         if (new_id == -1)
             return -1;
 
-        players.emplace_back(new_id, i_name, i_score);
+        players.push_back(std::make_shared<Player>(new_id, i_name, i_score));
         ids_set.insert(new_id);
         return new_id;
     }
@@ -103,10 +119,10 @@ namespace engine
             return -1;
         for (auto& player : players)
         {
-            if (player.get_player_id() == player_id)
+            if (player->get_player_id() == player_id)
                 return -1;
         }
-        players.emplace_back(player_id, i_name, i_score);
+        players.push_back(std::make_shared<Player>(player_id, i_name, i_score));
         return player_id;
     }
 
@@ -120,9 +136,9 @@ namespace engine
         std::lock_guard<std::mutex> lock{set_mutex};
         for (auto player = players.begin(); player != players.end(); ++player)
         {
-            if (player->get_player_id() == player_id)
+            if ((*player)->get_player_id() == player_id)
             {
-                ids_set.erase(player->get_player_id());
+                ids_set.erase((*player)->get_player_id());
                 players.erase(player);
                 std::lock_guard<std::mutex> lock2{observers_mutex};
                 for (auto observer : observers)
@@ -139,10 +155,10 @@ namespace engine
      * @param [in] iter
      * @return actual iterator
      */
-    std::vector<Player>::const_iterator PlayersList::erase_player(const std::vector<Player>::const_iterator iter)
+    std::vector<std::shared_ptr<Player>>::const_iterator PlayersList::erase_player(const std::vector<std::shared_ptr<Player>>::const_iterator iter)
     {
         std::lock_guard<std::mutex> lock{set_mutex};
-        int deleted_id = iter->get_player_id();
+        int deleted_id = (*iter)->get_player_id();
         ids_set.erase(deleted_id);
         std::lock_guard<std::mutex> lock2{observers_mutex};
         for (auto observer : observers)
@@ -160,7 +176,7 @@ namespace engine
         observers.emplace_back(observer);
     }
 
-    void PlayersList::remove_observer(std::shared_ptr<PlayersListObserver> observer)
+    void PlayersList::remove_observer(const std::shared_ptr<PlayersListObserver>& observer)
     {
         std::lock_guard<std::mutex> lock{observers_mutex};
         observers.erase(std::remove(observers.begin(), observers.end(), observer));

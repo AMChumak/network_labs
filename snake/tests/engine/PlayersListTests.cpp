@@ -13,9 +13,9 @@ TEST(players_list_tests, add_player_test)
 
     auto players = list.get_players();
     ASSERT_EQ(players.size(), 1);
-    ASSERT_EQ(players.at(0).get_player_id(), player_id);
-    ASSERT_EQ(players.at(0).get_name(), "test_player");
-    ASSERT_EQ(players.at(0).score, 10);
+    ASSERT_EQ(players.at(0)->get_player_id(), player_id);
+    ASSERT_EQ(players.at(0)->get_name(), "test_player");
+    ASSERT_EQ(players.at(0)->score, 10);
 }
 
 TEST(players_list_tests, load_players_test)
@@ -35,12 +35,12 @@ TEST(players_list_tests, load_players_test)
 
     auto players = list.get_players();
     ASSERT_EQ(players.size(), 2);
-    ASSERT_EQ(players.at(0).get_player_id(), 42);
-    ASSERT_EQ(players.at(0).get_name(), "answer");
-    ASSERT_EQ(players.at(0).score, 0);
-    ASSERT_EQ(players.at(1).get_player_id(), 43);
-    ASSERT_EQ(players.at(1).get_name(), "answer+1");
-    ASSERT_EQ(players.at(1).score, 1);
+    ASSERT_EQ(players.at(0)->get_player_id(), 42);
+    ASSERT_EQ(players.at(0)->get_name(), "answer");
+    ASSERT_EQ(players.at(0)->score, 0);
+    ASSERT_EQ(players.at(1)->get_player_id(), 43);
+    ASSERT_EQ(players.at(1)->get_name(), "answer+1");
+    ASSERT_EQ(players.at(1)->score, 1);
 }
 
 
@@ -52,9 +52,9 @@ TEST(players_list_tests, success_get_test)
     ASSERT_NE(player_id, -1);
 
     auto player = list.get_player(0);
-    ASSERT_EQ(player.get_player_id(), player_id);
-    ASSERT_EQ(player.get_name(), "test_player");
-    ASSERT_EQ(player.score, 10);
+    ASSERT_EQ(player->get_player_id(), player_id);
+    ASSERT_EQ(player->get_name(), "test_player");
+    ASSERT_EQ(player->score, 10);
 }
 
 
@@ -66,9 +66,9 @@ TEST(players_list_tests, failed_get_test)
     ASSERT_NE(player_id, -1);
 
     auto player = list.get_player(42);
-    ASSERT_EQ(player.get_player_id(), PlayersList::invalid_player.get_player_id());
-    ASSERT_EQ(player.get_name(), PlayersList::invalid_player.get_name());
-    ASSERT_EQ(player.score, PlayersList::invalid_player.score);
+    ASSERT_EQ(player->get_player_id(), PlayersList::invalid_player.get_player_id());
+    ASSERT_EQ(player->get_name(), PlayersList::invalid_player.get_name());
+    ASSERT_EQ(player->score, PlayersList::invalid_player.score);
 }
 
 
@@ -91,7 +91,7 @@ TEST(players_list_tests, first_erase_player_test)
 
     auto &players = list.get_players();
     ASSERT_EQ(players.size(), 1);
-    ASSERT_EQ(players.at(0).get_player_id(), 42);
+    ASSERT_EQ(players.at(0)->get_player_id(), 42);
 }
 
 TEST(players_list_tests, second_erase_player_test)
@@ -112,7 +112,7 @@ TEST(players_list_tests, second_erase_player_test)
     auto &players = list.get_players();
     list.erase_player(--players.end());
     ASSERT_EQ(players.size(), 1);
-    ASSERT_EQ(players.at(0).get_player_id(), 42);
+    ASSERT_EQ(players.at(0)->get_player_id(), 42);
 }
 
 

@@ -17,16 +17,18 @@ namespace engine
         PlayersList();
         PlayersList(const GamePlayers& players);
 
-        const std::vector<Player>& get_players() const;
-        Player& get_player(int player_id);
+        GamePlayers generate_state();
+
+        const std::vector<std::shared_ptr<Player>>& get_players() const;
+        std::shared_ptr<Player> get_player(int player_id);
 
         int add_player(std::string i_name, int i_score);
 
         void erase_player(int player_id);
-        std::vector<Player>::const_iterator erase_player(std::vector<Player>::const_iterator iter);
+        std::vector<std::shared_ptr<Player>>::const_iterator erase_player(std::vector<std::shared_ptr<Player>>::const_iterator iter);
 
         void add_observer(std::shared_ptr<PlayersListObserver> observer);
-        void remove_observer(std::shared_ptr<PlayersListObserver> observer);
+        void remove_observer(const std::shared_ptr<PlayersListObserver>& observer);
 
     private:
         int add_player(int player_id, std::string i_name, int i_score);
@@ -36,7 +38,7 @@ namespace engine
         std::mutex set_mutex;
         std::mutex observers_mutex;
         std::set<int> ids_set;
-        std::vector<Player> players;
+        std::vector<std::shared_ptr<Player>> players;
         std::vector<std::shared_ptr<PlayersListObserver>> observers;
     };
 } // engine

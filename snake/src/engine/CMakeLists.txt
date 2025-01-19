@@ -17,6 +17,7 @@ add_library(engine
         CommandsQueue.cpp CommandsQueue.h
         PlayersListObserver.h
         ConfigKeeper.cpp ConfigKeeper.h
+        Launcher.cpp Launcher.h
 )
 
 find_package(Protobuf REQUIRED)
