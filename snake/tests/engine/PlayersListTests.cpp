@@ -18,7 +18,32 @@ TEST(players_list_tests, add_player_test)
     ASSERT_EQ(players.at(0).score, 10);
 }
 
-TEST (players_list_tests, load_players_test)
+TEST(players_list_tests, add_player_with_id_success_test)
+{
+    PlayersList list;
+    int getted_id = list.get_available_id();
+    int player_id = list.add_player(getted_id, "test_player", 10);
+    ASSERT_NE(player_id, -1);
+
+    auto players = list.get_players();
+    ASSERT_EQ(players.size(), 1);
+    ASSERT_EQ(players.at(0).get_player_id(), player_id);
+    ASSERT_EQ(players.at(0).get_player_id(), getted_id);
+    ASSERT_EQ(players.at(0).get_name(), "test_player");
+    ASSERT_EQ(players.at(0).score, 10);
+}
+
+TEST(players_list_tests, add_player_with_id_failed_test)
+{
+    PlayersList list;
+    int player_id = list.add_player(1, "test_player", 10);
+    ASSERT_EQ(player_id, -1);
+
+    auto players = list.get_players();
+    ASSERT_EQ(players.size(), 0);
+}
+
+TEST(players_list_tests, load_players_test)
 {
     GamePlayers players_state;
     auto last_player = players_state.add_players();
@@ -44,7 +69,7 @@ TEST (players_list_tests, load_players_test)
 }
 
 
-TEST (players_list_tests, success_get_test)
+TEST(players_list_tests, success_get_test)
 {
     PlayersList list;
 
@@ -58,7 +83,7 @@ TEST (players_list_tests, success_get_test)
 }
 
 
-TEST (players_list_tests, failed_get_test)
+TEST(players_list_tests, failed_get_test)
 {
     PlayersList list;
 
@@ -72,7 +97,7 @@ TEST (players_list_tests, failed_get_test)
 }
 
 
-TEST (players_list_tests, first_erase_player_test)
+TEST(players_list_tests, first_erase_player_test)
 {
     GamePlayers players_state;
     auto last_player = players_state.add_players();
@@ -94,7 +119,7 @@ TEST (players_list_tests, first_erase_player_test)
     ASSERT_EQ(players.at(0).get_player_id(), 42);
 }
 
-TEST (players_list_tests, second_erase_player_test)
+TEST(players_list_tests, second_erase_player_test)
 {
     GamePlayers players_state;
     auto last_player = players_state.add_players();
@@ -113,4 +138,43 @@ TEST (players_list_tests, second_erase_player_test)
     players = list.get_players();
     ASSERT_EQ(players.size(), 1);
     ASSERT_EQ(players.at(0).get_player_id(), 42);
+}
+
+
+class PlayersObserver : public PlayersListObserver
+{
+public:
+    int get_last_deleted_player_id() const
+    {
+        return last_id;
+    }
+    void on_player_delete(int player_id) override
+    {
+        last_id = player_id;
+    }
+private:
+    int last_id = -2;
+};
+
+TEST(players_list_tests, add_players_observer_test)
+{
+    std::shared_ptr<PlayersObserver> observer = std::make_shared<PlayersObserver>();
+    PlayersList list;
+    list.add_observer(observer);
+    int player_id = list.add_player("test_player", 10);
+    list.erase_player(player_id);
+    int last = observer->get_last_deleted_player_id();
+    ASSERT_EQ(last, player_id);
+}
+
+TEST(players_list_tests, remove_players_observer_test)
+{
+    std::shared_ptr<PlayersObserver> observer = std::make_shared<PlayersObserver>();
+    PlayersList list;
+    list.add_observer(observer);
+    list.remove_observer(observer);
+    int player_id = list.add_player("test_player", 10);
+    list.erase_player(player_id);
+    int last = observer->get_last_deleted_player_id();
+    ASSERT_EQ(last, -2);
 }

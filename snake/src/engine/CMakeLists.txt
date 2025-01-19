@@ -12,6 +12,10 @@ add_library(engine
         BornStrategyStd.h BornStrategyStd.cpp
         Player.h Player.cpp
         PlayersList.cpp PlayersList.h
+        Commands.h Commands.cpp
+        CommandExecutor.cpp CommandExecutor.h
+        CommandsQueue.cpp CommandsQueue.h
+        PlayersListObserver.h
 )
 
 find_package(Protobuf REQUIRED)
