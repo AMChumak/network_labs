@@ -621,6 +621,13 @@ build tests/CMakeFiles/snakeTests.dir/engine/PlayersListTests.cpp.o: CXX_COMPILE
   OBJECT_DIR = tests/CMakeFiles/snakeTests.dir
   OBJECT_FILE_DIR = tests/CMakeFiles/snakeTests.dir/engine
 
+build tests/CMakeFiles/snakeTests.dir/engine/CommandsTests.cpp.o: CXX_COMPILER__snakeTests_unscanned_Debug /home/anton/Documents/Networks/course3/snake/tests/engine/CommandsTests.cpp || cmake_object_order_depends_target_snakeTests
+  DEP_FILE = tests/CMakeFiles/snakeTests.dir/engine/CommandsTests.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/snake/src -isystem /home/anton/Documents/Networks/course3/snake/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/snake/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = tests/CMakeFiles/snakeTests.dir
+  OBJECT_FILE_DIR = tests/CMakeFiles/snakeTests.dir/engine
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target snakeTests
@@ -629,7 +636,7 @@ build tests/CMakeFiles/snakeTests.dir/engine/PlayersListTests.cpp.o: CXX_COMPILE
 #############################################
 # Link the executable tests/snakeTests
 
-build tests/snakeTests: CXX_EXECUTABLE_LINKER__snakeTests_Debug tests/CMakeFiles/snakeTests.dir/engine/FieldTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/SnakeTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/FoodDistributorTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/StepStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/EatStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/KillStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/FindPlaceStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/BornStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/PlayersListTests.cpp.o | src/engine/libengine.a src/proto/libproto.a lib/libgtest_main.a lib/libgtest.a /usr/lib/x86_64-linux-gnu/libprotobuf.so || lib/libgtest.a lib/libgtest_main.a src/engine/libengine.a src/proto/libproto.a
+build tests/snakeTests: CXX_EXECUTABLE_LINKER__snakeTests_Debug tests/CMakeFiles/snakeTests.dir/engine/FieldTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/SnakeTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/FoodDistributorTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/StepStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/EatStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/KillStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/FindPlaceStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/BornStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/PlayersListTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/CommandsTests.cpp.o | src/engine/libengine.a src/proto/libproto.a lib/libgtest_main.a lib/libgtest.a /usr/lib/x86_64-linux-gnu/libprotobuf.so || lib/libgtest.a lib/libgtest_main.a src/engine/libengine.a src/proto/libproto.a
   FLAGS = -g
   LINK_LIBRARIES = src/engine/libengine.a  src/proto/libproto.a  lib/libgtest_main.a  lib/libgtest.a  /usr/lib/x86_64-linux-gnu/libprotobuf.so
   OBJECT_DIR = tests/CMakeFiles/snakeTests.dir

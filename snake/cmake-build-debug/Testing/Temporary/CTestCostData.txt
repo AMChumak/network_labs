@@ -1,2 +1,2 @@
-snakeGTests 9 0.000371582
+snakeGTests 10 0.000344093
 ---

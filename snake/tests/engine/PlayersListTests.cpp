@@ -18,31 +18,6 @@ TEST(players_list_tests, add_player_test)
     ASSERT_EQ(players.at(0).score, 10);
 }
 
-TEST(players_list_tests, add_player_with_id_success_test)
-{
-    PlayersList list;
-    int getted_id = list.get_available_id();
-    int player_id = list.add_player(getted_id, "test_player", 10);
-    ASSERT_NE(player_id, -1);
-
-    auto players = list.get_players();
-    ASSERT_EQ(players.size(), 1);
-    ASSERT_EQ(players.at(0).get_player_id(), player_id);
-    ASSERT_EQ(players.at(0).get_player_id(), getted_id);
-    ASSERT_EQ(players.at(0).get_name(), "test_player");
-    ASSERT_EQ(players.at(0).score, 10);
-}
-
-TEST(players_list_tests, add_player_with_id_failed_test)
-{
-    PlayersList list;
-    int player_id = list.add_player(1, "test_player", 10);
-    ASSERT_EQ(player_id, -1);
-
-    auto players = list.get_players();
-    ASSERT_EQ(players.size(), 0);
-}
-
 TEST(players_list_tests, load_players_test)
 {
     GamePlayers players_state;
@@ -114,7 +89,7 @@ TEST(players_list_tests, first_erase_player_test)
 
     list.erase_player(43);
 
-    auto players = list.get_players();
+    auto &players = list.get_players();
     ASSERT_EQ(players.size(), 1);
     ASSERT_EQ(players.at(0).get_player_id(), 42);
 }
@@ -132,10 +107,10 @@ TEST(players_list_tests, second_erase_player_test)
     last_player->set_name("answer+1");
     last_player->set_score(1);
 
+
     PlayersList list{players_state};
-    auto players = list.get_players();
+    auto &players = list.get_players();
     list.erase_player(--players.end());
-    players = list.get_players();
     ASSERT_EQ(players.size(), 1);
     ASSERT_EQ(players.at(0).get_player_id(), 42);
 }

@@ -10,6 +10,7 @@ public:
     int get_player_id() const;
     std::string get_name();
 
+
 public:
     int score;
 private:

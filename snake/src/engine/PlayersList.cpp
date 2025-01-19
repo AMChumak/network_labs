@@ -150,6 +150,7 @@ namespace engine
             observer->on_player_delete(deleted_id);
         }
         return players.erase(iter);
+
     }
 
 

@@ -1,3 +1,135 @@
-Start testing: Jan 19 12:00 +07
+Start testing: Jan 19 16:11 +07
 ----------------------------------------------------------
-End testing: Jan 19 12:00 +07
+1/1 Testing: snakeGTests
+1/1 Test: snakeGTests
+Command: "/home/anton/Documents/Networks/course3/snake/cmake-build-debug/tests/snakeTests"
+Directory: /home/anton/Documents/Networks/course3/snake/cmake-build-debug/tests
+"snakeGTests" start time: Jan 19 16:11 +07
+Output:
+----------------------------------------------------------
+Running main() from /home/anton/Documents/Networks/course3/snake/cmake-build-debug/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 39 tests from 11 test suites.
+[----------] Global test environment set-up.
+[----------] 2 tests from field_tests
+[ RUN      ] field_tests.field_getters_test
+[       OK ] field_tests.field_getters_test (0 ms)
+[ RUN      ] field_tests.field_canonize_test
+[       OK ] field_tests.field_canonize_test (0 ms)
+[----------] 2 tests from field_tests (0 ms total)
+
+[----------] 3 tests from geometry_tests
+[ RUN      ] geometry_tests.bypass_right_offset_test
+[       OK ] geometry_tests.bypass_right_offset_test (0 ms)
+[ RUN      ] geometry_tests.bypass_line_feed_test
+[       OK ] geometry_tests.bypass_line_feed_test (0 ms)
+[ RUN      ] geometry_tests.bypass_round_test
+[       OK ] geometry_tests.bypass_round_test (0 ms)
+[----------] 3 tests from geometry_tests (0 ms total)
+
+[----------] 7 tests from SnakeTests
+[ RUN      ] SnakeTests.snake_intersect_test
+[       OK ] SnakeTests.snake_intersect_test (0 ms)
+[ RUN      ] SnakeTests.snake_step_forward_test
+[       OK ] SnakeTests.snake_step_forward_test (0 ms)
+[ RUN      ] SnakeTests.snake_incorrect_turn_test
+[       OK ] SnakeTests.snake_incorrect_turn_test (0 ms)
+[ RUN      ] SnakeTests.snake_turn_down_and_step_test
+[       OK ] SnakeTests.snake_turn_down_and_step_test (0 ms)
+[ RUN      ] SnakeTests.snake_grow_back_test
+[       OK ] SnakeTests.snake_grow_back_test (0 ms)
+[ RUN      ] SnakeTests.snake_turn_grow_test
+[       OK ] SnakeTests.snake_turn_grow_test (0 ms)
+[ RUN      ] SnakeTests.snake_get_body_test
+[       OK ] SnakeTests.snake_get_body_test (0 ms)
+[----------] 7 tests from SnakeTests (0 ms total)
+
+[----------] 4 tests from FoodDistributorTests
+[ RUN      ] FoodDistributorTests.food_distributor_refill_test
+[       OK ] FoodDistributorTests.food_distributor_refill_test (0 ms)
+[ RUN      ] FoodDistributorTests.food_refill_with_snake_test
+[       OK ] FoodDistributorTests.food_refill_with_snake_test (0 ms)
+[ RUN      ] FoodDistributorTests.food_fill_by_state_test
+[       OK ] FoodDistributorTests.food_fill_by_state_test (0 ms)
+[ RUN      ] FoodDistributorTests.food_erase_test
+[       OK ] FoodDistributorTests.food_erase_test (0 ms)
+[----------] 4 tests from FoodDistributorTests (0 ms total)
+
+[----------] 1 test from StepStrategyTests
+[ RUN      ] StepStrategyTests.step_test
+[       OK ] StepStrategyTests.step_test (0 ms)
+[----------] 1 test from StepStrategyTests (0 ms total)
+
+[----------] 1 test from EatStrategyTests
+[ RUN      ] EatStrategyTests.std_eat_test
+[       OK ] EatStrategyTests.std_eat_test (0 ms)
+[----------] 1 test from EatStrategyTests (0 ms total)
+
+[----------] 2 tests from KillStrategyTests
+[ RUN      ] KillStrategyTests.kill_one_snake_test
+[       OK ] KillStrategyTests.kill_one_snake_test (0 ms)
+[ RUN      ] KillStrategyTests.kill_all_snake_test
+[       OK ] KillStrategyTests.kill_all_snake_test (0 ms)
+[----------] 2 tests from KillStrategyTests (0 ms total)
+
+[----------] 4 tests from FindPlaceStrategyTests
+[ RUN      ] FindPlaceStrategyTests.successful_search_test
+[       OK ] FindPlaceStrategyTests.successful_search_test (0 ms)
+[ RUN      ] FindPlaceStrategyTests.failed_by_snakes_search_test
+[       OK ] FindPlaceStrategyTests.failed_by_snakes_search_test (0 ms)
+[ RUN      ] FindPlaceStrategyTests.failed_by_food_search_test
+[       OK ] FindPlaceStrategyTests.failed_by_food_search_test (0 ms)
+[ RUN      ] FindPlaceStrategyTests.success_only_one_available_pair_test
+[       OK ] FindPlaceStrategyTests.success_only_one_available_pair_test (0 ms)
+[----------] 4 tests from FindPlaceStrategyTests (0 ms total)
+
+[----------] 4 tests from BornStrategyTests
+[ RUN      ] BornStrategyTests.successful_search_test
+[       OK ] BornStrategyTests.successful_search_test (0 ms)
+[ RUN      ] BornStrategyTests.failed_by_snakes_search_test
+[       OK ] BornStrategyTests.failed_by_snakes_search_test (0 ms)
+[ RUN      ] BornStrategyTests.failed_by_food_search_test
+[       OK ] BornStrategyTests.failed_by_food_search_test (0 ms)
+[ RUN      ] BornStrategyTests.success_only_one_available_pair_test
+[       OK ] BornStrategyTests.success_only_one_available_pair_test (0 ms)
+[----------] 4 tests from BornStrategyTests (0 ms total)
+
+[----------] 8 tests from players_list_tests
+[ RUN      ] players_list_tests.add_player_test
+[       OK ] players_list_tests.add_player_test (0 ms)
+[ RUN      ] players_list_tests.load_players_test
+[       OK ] players_list_tests.load_players_test (0 ms)
+[ RUN      ] players_list_tests.success_get_test
+[       OK ] players_list_tests.success_get_test (0 ms)
+[ RUN      ] players_list_tests.failed_get_test
+[       OK ] players_list_tests.failed_get_test (0 ms)
+[ RUN      ] players_list_tests.first_erase_player_test
+[       OK ] players_list_tests.first_erase_player_test (0 ms)
+[ RUN      ] players_list_tests.second_erase_player_test
+[       OK ] players_list_tests.second_erase_player_test (0 ms)
+[ RUN      ] players_list_tests.add_players_observer_test
+[       OK ] players_list_tests.add_players_observer_test (0 ms)
+[ RUN      ] players_list_tests.remove_players_observer_test
+[       OK ] players_list_tests.remove_players_observer_test (0 ms)
+[----------] 8 tests from players_list_tests (0 ms total)
+
+[----------] 3 tests from CommandsTests
+[ RUN      ] CommandsTests.commands_queue_test
+[       OK ] CommandsTests.commands_queue_test (0 ms)
+[ RUN      ] CommandsTests.executor_command_create_test
+[       OK ] CommandsTests.executor_command_create_test (0 ms)
+[ RUN      ] CommandsTests.executor_command_turn_test
+[       OK ] CommandsTests.executor_command_turn_test (0 ms)
+[----------] 3 tests from CommandsTests (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 39 tests from 11 test suites ran. (1 ms total)
+[  PASSED  ] 39 tests.
+<end of output>
+Test time =   0.00 sec
+----------------------------------------------------------
+Test Passed.
+"snakeGTests" end time: Jan 19 16:11 +07
+"snakeGTests" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jan 19 16:11 +07

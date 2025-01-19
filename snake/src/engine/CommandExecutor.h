@@ -28,12 +28,12 @@ namespace engine
         };
 
     public:
-        CommandExecutor(std::shared_ptr<Field> i_field, std::shared_ptr<std::vector<Snake>> i_snakes,
-                        std::shared_ptr<FoodDistributor> i_food_distributor, std::shared_ptr<PlayersList> i_players_list);
-        void execute_action_commands(std::vector<CommandI> &commands);
-        void execute_creation_commands(std::vector<CommandI> &commands);
-        void execute(const CommandCreate& command);
-        void execute(const CommandTurn& command);
+        CommandExecutor(const std::shared_ptr<Field>& i_field, const std::shared_ptr<std::vector<Snake>>& i_snakes,
+                        const std::shared_ptr<FoodDistributor>& i_food_distributor, const std::shared_ptr<PlayersList>& i_players_list);
+        void execute_action_commands(std::vector<std::shared_ptr<CommandI>> &commands);
+        void execute_creation_commands(std::vector<std::shared_ptr<CommandI>> &commands);
+        void execute(const CommandCreate& command) const;
+        void execute(const CommandTurn& command) const;
 
     private:
         ExecutorState state = ACTION;

@@ -22,6 +22,7 @@ add_executable(snakeTests
         engine/FindPlaceStrategyTests.cpp
         engine/BornStrategyTests.cpp
         engine/PlayersListTests.cpp
+        engine/CommandsTests.cpp
 )
 
 target_link_libraries(snakeTests PRIVATE GTest::GTest engine proto)
