@@ -451,6 +451,13 @@ build src/engine/CMakeFiles/engine.dir/CommandsQueue.cpp.o: CXX_COMPILER__engine
   OBJECT_DIR = src/engine/CMakeFiles/engine.dir
   OBJECT_FILE_DIR = src/engine/CMakeFiles/engine.dir
 
+build src/engine/CMakeFiles/engine.dir/ConfigKeeper.cpp.o: CXX_COMPILER__engine_unscanned_Debug /home/anton/Documents/Networks/course3/snake/src/engine/ConfigKeeper.cpp || cmake_object_order_depends_target_engine
+  DEP_FILE = src/engine/CMakeFiles/engine.dir/ConfigKeeper.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/snake/src
+  OBJECT_DIR = src/engine/CMakeFiles/engine.dir
+  OBJECT_FILE_DIR = src/engine/CMakeFiles/engine.dir
+
 
 # =============================================================================
 # Link build statements for STATIC_LIBRARY target engine
@@ -459,7 +466,7 @@ build src/engine/CMakeFiles/engine.dir/CommandsQueue.cpp.o: CXX_COMPILER__engine
 #############################################
 # Link the static library src/engine/libengine.a
 
-build src/engine/libengine.a: CXX_STATIC_LIBRARY_LINKER__engine_Debug src/engine/CMakeFiles/engine.dir/Field.cpp.o src/engine/CMakeFiles/engine.dir/Snake.cpp.o src/engine/CMakeFiles/engine.dir/FoodDistributor.cpp.o src/engine/CMakeFiles/engine.dir/StepStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/EatStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/KillStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/FindPlaceStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/BornStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/Player.cpp.o src/engine/CMakeFiles/engine.dir/PlayersList.cpp.o src/engine/CMakeFiles/engine.dir/Commands.cpp.o src/engine/CMakeFiles/engine.dir/CommandExecutor.cpp.o src/engine/CMakeFiles/engine.dir/CommandsQueue.cpp.o || src/proto/libproto.a
+build src/engine/libengine.a: CXX_STATIC_LIBRARY_LINKER__engine_Debug src/engine/CMakeFiles/engine.dir/Field.cpp.o src/engine/CMakeFiles/engine.dir/Snake.cpp.o src/engine/CMakeFiles/engine.dir/FoodDistributor.cpp.o src/engine/CMakeFiles/engine.dir/StepStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/EatStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/KillStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/FindPlaceStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/BornStrategyStd.cpp.o src/engine/CMakeFiles/engine.dir/Player.cpp.o src/engine/CMakeFiles/engine.dir/PlayersList.cpp.o src/engine/CMakeFiles/engine.dir/Commands.cpp.o src/engine/CMakeFiles/engine.dir/CommandExecutor.cpp.o src/engine/CMakeFiles/engine.dir/CommandsQueue.cpp.o src/engine/CMakeFiles/engine.dir/ConfigKeeper.cpp.o || src/proto/libproto.a
   LANGUAGE_COMPILE_FLAGS = -g
   OBJECT_DIR = src/engine/CMakeFiles/engine.dir
   POST_BUILD = :
@@ -628,6 +635,13 @@ build tests/CMakeFiles/snakeTests.dir/engine/CommandsTests.cpp.o: CXX_COMPILER__
   OBJECT_DIR = tests/CMakeFiles/snakeTests.dir
   OBJECT_FILE_DIR = tests/CMakeFiles/snakeTests.dir/engine
 
+build tests/CMakeFiles/snakeTests.dir/engine/ConfigKeeperTests.cpp.o: CXX_COMPILER__snakeTests_unscanned_Debug /home/anton/Documents/Networks/course3/snake/tests/engine/ConfigKeeperTests.cpp || cmake_object_order_depends_target_snakeTests
+  DEP_FILE = tests/CMakeFiles/snakeTests.dir/engine/ConfigKeeperTests.cpp.o.d
+  FLAGS = -g -std=gnu++20 -fdiagnostics-color=always
+  INCLUDES = -I/home/anton/Documents/Networks/course3/snake/src -isystem /home/anton/Documents/Networks/course3/snake/cmake-build-debug/_deps/googletest-src/googletest/include -isystem /home/anton/Documents/Networks/course3/snake/cmake-build-debug/_deps/googletest-src/googletest
+  OBJECT_DIR = tests/CMakeFiles/snakeTests.dir
+  OBJECT_FILE_DIR = tests/CMakeFiles/snakeTests.dir/engine
+
 
 # =============================================================================
 # Link build statements for EXECUTABLE target snakeTests
@@ -636,7 +650,7 @@ build tests/CMakeFiles/snakeTests.dir/engine/CommandsTests.cpp.o: CXX_COMPILER__
 #############################################
 # Link the executable tests/snakeTests
 
-build tests/snakeTests: CXX_EXECUTABLE_LINKER__snakeTests_Debug tests/CMakeFiles/snakeTests.dir/engine/FieldTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/SnakeTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/FoodDistributorTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/StepStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/EatStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/KillStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/FindPlaceStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/BornStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/PlayersListTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/CommandsTests.cpp.o | src/engine/libengine.a src/proto/libproto.a lib/libgtest_main.a lib/libgtest.a /usr/lib/x86_64-linux-gnu/libprotobuf.so || lib/libgtest.a lib/libgtest_main.a src/engine/libengine.a src/proto/libproto.a
+build tests/snakeTests: CXX_EXECUTABLE_LINKER__snakeTests_Debug tests/CMakeFiles/snakeTests.dir/engine/FieldTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/SnakeTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/FoodDistributorTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/StepStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/EatStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/KillStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/FindPlaceStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/BornStrategyTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/PlayersListTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/CommandsTests.cpp.o tests/CMakeFiles/snakeTests.dir/engine/ConfigKeeperTests.cpp.o | src/engine/libengine.a src/proto/libproto.a lib/libgtest_main.a lib/libgtest.a /usr/lib/x86_64-linux-gnu/libprotobuf.so || lib/libgtest.a lib/libgtest_main.a src/engine/libengine.a src/proto/libproto.a
   FLAGS = -g
   LINK_LIBRARIES = src/engine/libengine.a  src/proto/libproto.a  lib/libgtest_main.a  lib/libgtest.a  /usr/lib/x86_64-linux-gnu/libprotobuf.so
   OBJECT_DIR = tests/CMakeFiles/snakeTests.dir
