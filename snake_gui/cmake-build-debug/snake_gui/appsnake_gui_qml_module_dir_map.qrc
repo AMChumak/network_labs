@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/">
+    <file alias="/qt/qml/snake_gui">/home/anton/Documents/Networks/course3/snake_gui/cmake-build-debug/snake_gui</file>
+
+  </qresource>
+</RCC>

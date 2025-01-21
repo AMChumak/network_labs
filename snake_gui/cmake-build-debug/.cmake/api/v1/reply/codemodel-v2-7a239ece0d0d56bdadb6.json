@@ -1,0 +1,187 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"hasInstallRule" : true,
+					"jsonFile" : "directory-.-Debug-bffa19f2696db18b3af4.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "snake_gui",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-ee0ac8c5c5d3257d1a7c.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-040acec56bdde7405908.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-017a490237470f11ba6e.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-8bdd47b04d9873765056.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-84d2cd7285643531d188.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui-Debug-39c61e16ee023e1719ba.json",
+					"name" : "appsnake_gui",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui_autogen-Debug-adb930141baf4e6affcb.json",
+					"name" : "appsnake_gui_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui_autogen_timestamp_deps-Debug-f8bbe171960c827a99f4.json",
+					"name" : "appsnake_gui_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui_qmlimportscan-Debug-770d2d18a0d91a40bf2f.json",
+					"name" : "appsnake_gui_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui_qmllint-Debug-eacb8477200b03f1f889.json",
+					"name" : "appsnake_gui_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui_qmllint_json-Debug-3217463f8c245efaf162.json",
+					"name" : "appsnake_gui_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui_qmllint_module-Debug-0ce3fc9514c6f767209a.json",
+					"name" : "appsnake_gui_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui_qmltyperegistration-Debug-c8adb1dd4f598034b64f.json",
+					"name" : "appsnake_gui_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appsnake_gui_tooling::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appsnake_gui_tooling-Debug-006559251d83999c5854.json",
+					"name" : "appsnake_gui_tooling",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appsnake_gui_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appsnake_gui_aotstats_target-Debug-c12290aea83e45f7123f.json",
+					"name" : "module_appsnake_gui_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/anton/Documents/Networks/course3/snake_gui/cmake-build-debug",
+		"source" : "/home/anton/Documents/Networks/course3/snake_gui"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

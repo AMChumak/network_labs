@@ -1,0 +1,15 @@
+-rootPath
+/home/anton/Documents/Networks/course3/snake_gui
+-cmake-output
+-output-file
+/home/anton/Documents/Networks/course3/snake_gui/cmake-build-debug/.qt/qml_imports/appsnake_gui_build.cmake
+-importPath
+/home/anton/Documents/Networks/course3/snake_gui/cmake-build-debug/snake_gui
+-importPath
+/home/anton/Documents/Networks/course3/snake_gui/cmake-build-debug
+-importPath
+/home/anton/Qt/6.8.1/gcc_64/qml
+-qrcFiles
+/home/anton/Documents/Networks/course3/snake_gui/cmake-build-debug/.qt/rcc/qmake_snake_gui.qrc
+/home/anton/Documents/Networks/course3/snake_gui/cmake-build-debug/.qt/rcc/appsnake_gui_raw_qml_0.qrc
+/home/anton/Documents/Networks/course3/snake_gui/cmake-build-debug/.qt/rcc/appsnake_gui_raw_qml_0_extra_qmldirs.qrc

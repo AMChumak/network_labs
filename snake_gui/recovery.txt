@@ -1,0 +1,117 @@
+import QtQuick
+import QtMultimedia 6.0
+
+Window {
+    width: 600
+    height: 800
+    visible: true
+    title: qsTr("Snakes")
+
+    FontLoader { id: fontLoader; source: "fonts/retro.ttf" }
+    Image {
+        anchors.fill: parent
+        source: "images/background.png"
+        fillMode: Image.Pad
+    }
+    Image {
+        x:240
+        y:500
+        source: "images/my_snake_head.png"
+        fillMode: Image.Pad
+    }
+    Image {
+        x:260
+        y:500
+        source: "images/my_snake_body.png"
+        fillMode: Image.Pad
+    }
+    Image {
+        x:260
+        y:480
+        source: "images/my_snake_body.png"
+        fillMode: Image.Pad
+    }
+    Image {
+        x:240
+        y:520
+        source: "images/enemy_snake_head.png"
+        fillMode: Image.Pad
+    }
+    Image {
+        x:260
+        y:520
+        source: "images/enemy_snake_body.png"
+        fillMode: Image.Pad
+    }
+    Image {
+        x:280
+        y:520
+        source: "images/enemy_snake_body.png"
+        fillMode: Image.Pad
+    }
+    Image {
+        x:280
+        y:500
+        source: "images/food.png"
+        fillMode: Image.Pad
+    }
+
+    Image {
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: 100
+        width:200
+        height: 150
+        source: "images/snakes_logo.png"
+        fillMode: Image.Stretch
+    }
+
+    Image {
+        anchors.horizontalCenter: parent.horizontalCenter
+        y: 250
+        height:50
+        width: 300
+        source: "images/UI-58.png"
+        fillMode: Image.Stretch
+    }
+
+    Image {
+        y: 310
+        x: 300
+        height:50
+        width: 50
+        source: "images/UI-104.png"
+        fillMode: Image.Stretch
+    }
+
+    Image {
+        x: 100
+        y: 310
+        height:50
+        width: 50
+        source: "images/UI-18.png"
+        fillMode: Image.Stretch
+    }
+
+    Text {
+        x: 200
+        y: 200
+        height:100
+        width:300
+        font.family: "Retro Gaming"
+        font.pixelSize: 36
+        color: "white"
+        text: "Settings"
+    }
+
+    MediaPlayer {
+        id: mediaPlayer
+            source: "qrc:/snake_gui/sounds/song.mp3"  // Path to the music file
+        audioOutput: AudioOutput {
+            volume: 0.5
+        }  // Required in Qt 6
+
+    }
+    Component.onCompleted: {
+        mediaPlayer.play()
+    }
+}

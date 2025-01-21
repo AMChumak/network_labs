@@ -1,0 +1,36 @@
+<RCC>
+    <qresource prefix="/snake_gui">
+        <file>Main.qml</file>
+        <file>HomePage/HomePage.qml</file>
+    </qresource>
+    <qresource prefix="/snake_gui">
+        <file>sounds/song.mp3</file>
+        <file>sounds/button.mp3</file>
+    </qresource>
+    <qresource prefix="/snake_gui">
+        <file>fonts/retro.ttf</file>
+    </qresource>
+    <qresource prefix="/snake_gui">
+        <file>images/UI-01.png</file>
+        <file>images/UI-02.png</file>
+        <file>images/UI-03.png</file>
+        <file>images/UI-04.png</file>
+        <file>images/UI-05.png</file>
+        <file>images/UI-06.png</file>
+        <file>images/UI-7.png</file>
+        <file>images/UI-8.png</file>
+        <file>images/UI-18.png</file>
+        <file>images/UI-19.png</file>
+        <file>images/UI-58.png</file>
+        <file>images/UI-104.png</file>
+        <file>images/UI-105.png</file>
+        <file>images/background.png</file>
+        <file>images/enemy_snake_body.png</file>
+        <file>images/enemy_snake_head.png</file>
+        <file>images/my_snake_body.png</file>
+        <file>images/my_snake_head.png</file>
+        <file>images/snakes_icon.png</file>
+        <file>images/snakes_logo.png</file>
+        <file>images/food.png</file>
+    </qresource>
+</RCC>
